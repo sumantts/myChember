@@ -29,15 +29,15 @@
 		include('dashboard/dashboard.php');		
 		break;
 
-		//SETUP		
-		case 'maid_request':
-			$title = "Maid Request";
-			include('setup/maid_request/maid_request.php');		
+		//SETTINGS		
+		case 'profile':
+			$title = "Profile";
+			include('settings/profile/profile.php');		
 		break;
 		
-		case 'services':
-			$title = "Services";
-			include('setup/services/services.php');		
+		case 'multi_center_setup':
+			$title = "Multi-Center";
+			include('settings/center/multi_center_setup.php');		
 		break;
 						
 		default:

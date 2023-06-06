@@ -109,48 +109,7 @@
             ajaxStop: function() { $body.removeClass("loading"); }    
         });
         // common for all function.js page 
-
-        $('#updateProfile').click(function(){
-            
-            $profile_name = $('#profile_name').val();
-            $username = $('#username').val();
-            $password = $('#password').val();
-
-            if($profile_name == ''){
-                alert('Please enter profile name');
-                $('#profile_name').focus();
-            }else if($username == ''){
-                alert('Please enter user name');
-                $('#username').focus();
-            }else if($password == ''){
-                alert('Please enter password');
-                $('#password').focus();
-            }else{
-                $.ajax({
-                    method: "POST",
-                    url: "signin/function.php",
-                    data: { fn: "updateProfile", profile_name: $profile_name, username: $username, password: $password }
-                })
-                .done(function( res ) {
-                    console.log(res);
-                    $res1 = JSON.parse(res);
-                    // $('#signin_spinner').hide();
-                    // $('#signin_spinner_text').hide();
-                    // $('#signin_text').show();
-
-                    if($res1.status == true){
-                        $('#updateProfileModal').modal('hide');
-                        alert('Profile Updated. You will be log out automatically')
-                        window.location.href = '?p=signin';
-                    }else{
-                        $('#updateProfileModal').modal('hide');
-                        //alert($res1.message);
-                        //$('#error_text').html('Wrong username or password');
-                    }
-                });//end ajax
-            }
-
-        });//end function
+        
         
     </script>
     
@@ -173,6 +132,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- End for data table -->
+
+<!-- Select 2 Dropdown  -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<!-- Select 2 Dropdown  -->
 
 </body>
 

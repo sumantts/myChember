@@ -19,11 +19,11 @@ $(document).ready(function() {
                 },
                 colors: ["#1abc9c"],
                 series: [{
-                    name: "Patient",
+                    name: "Desktops",
                     data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
                 }],
                 title: {
-                    text: 'Patient Trends by Month',
+                    text: 'Product Trends by Month',
                     align: 'left'
                 },
                 grid: {
@@ -244,9 +244,8 @@ $(document).ready(function() {
                     height: 320,
                     type: 'donut',
                 },
-                labels: ['Patient', 'Hospital', 'Miscellaneous'],
-                series: [44, 55, 41],
-                colors: ["#0e9e4a", "#f1c40f", "#e74c3c"],
+                series: [44, 55, 41, 17, 15],
+                colors: ["#1abc9c", "#0e9e4a", "#00acc1", "#f1c40f", "#e74c3c"],
                 legend: {
                     show: true,
                     position: 'bottom',

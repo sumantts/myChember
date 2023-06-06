@@ -64,7 +64,7 @@
 						<h4 class="mb-3 f-w-400"><?php echo $title; ?></h4>
 						<hr>
 						<div class="form-group mb-3">
-							<input type="text" class="form-control" id="Email" placeholder="Email address">
+							<input type="text" class="form-control" id="Email" placeholder="Registration No.">
 						</div>
 						<div class="form-group mb-4">
 							<input type="password" class="form-control" id="Password" placeholder="Password">
@@ -83,7 +83,7 @@
 
 						<hr>
 						<!-- <p class="mb-2 text-muted">Forgot password? <a href="auth-reset-password.html" class="f-w-400">Reset</a></p> -->
-						<p class="mb-0 text-muted">Go to website? <a href="https://sahamaidservice.com/" class="f-w-400">Click Here</a></p>
+						<p class="mb-0 text-muted">Forgot Password? <a href="?p=forgot_password" class="f-w-400">Click Here</a></p>
 					</div>
 					
 					
