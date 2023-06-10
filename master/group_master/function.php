@@ -40,7 +40,7 @@
 	}//Save function end	
 
 	//function start
-	if($fn == 'getCenters'){
+	if($fn == 'getSubcategories'){
 		$return_array = array();
 		$status = true;
 		$mainData = array();
@@ -68,17 +68,20 @@
 			$status = false;
 		}
 		$mysqli->close();*/
-
-		$data[0] = 1;
-		$data[1] = "BBH";
-		$data[2] = "Balananda Brahmachari Hospital And Research Centre";
-		$data[3] = "<a href='javascript: void(0)' data-center_id='1'><i class='fa fa-edit' aria-hidden='true' ></i>  </a><a href='javascript: void(0)' data-center_id='2'>  <i class='fa fa-trash' aria-hidden='true' data-center_id='1' ></i></a>";
+		
+		$data[0] = "1";
+		$data[1] = "Mivacurium";
+		$data[2] = "<a href='javascript: void(0)' data-center_id='2'>  <i class='fa fa-trash' aria-hidden='true' data-center_id='1' ></i></a>";
 		array_push($mainData, $data);
-
-		$data[0] = 2;
-		$data[1] = "RGS";
-		$data[2] = "RG Stone Urology & Laparoscopy Hospital";
-		$data[3] = "<a href='javascript: void(0)' data-center_id='2'><i class='fa fa-edit' aria-hidden='true'></i> </a><a href='javascript: void(0)' data-center_id='2'> <i class='fa fa-trash' aria-hidden='true' ></i> </a>";
+		
+		$data[0] = "2";
+		$data[1] = "Atracurium";
+		$data[2] = "<a href='javascript: void(0)' data-center_id='2'> <i class='fa fa-trash' aria-hidden='true' ></i> </a>";
+		array_push($mainData, $data);
+		
+		$data[0] = "3";
+		$data[1] = "Vecuronium";
+		$data[2] = "<a href='javascript: void(0)' data-center_id='3'> <i class='fa fa-trash' aria-hidden='true' ></i> </a>";
 		array_push($mainData, $data);
 
 		$return_array['data'] = $mainData;

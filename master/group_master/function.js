@@ -105,7 +105,7 @@ function deleteService($service_id){
     if (confirm('Are you sure to delete the Service?')) {
         $.ajax({
             method: "POST",
-            url: "setup/services/function.php",
+            url: "master/group_master/function.php",
             data: { fn: "deleteService", service_id: $service_id }
         })
         .done(function( res ) {
@@ -127,7 +127,7 @@ function populateDataTable(){
     $('#example').DataTable({ 
         responsive: true,
         serverMethod: 'GET',
-        ajax: {'url': 'settings/center/function.php?fn=getCenters' },
+        ajax: {'url': 'master/group_master/function.php?fn=getSubcategories' },
         dom: 'Bfrtip',
         buttons: [
             {

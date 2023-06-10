@@ -198,7 +198,7 @@
                                 </div>   
                                 <div class="col-md-4 mb-3">  
                                     <span class="hei-100 wid-100 bg-light d-inline-block mr-2 border border-primary" data-toggle="tooltip" title="Dr. Pallab Saha">
-                                        <img src="assets/images/profile/noimage.jpeg" height="98px" width="98px" >
+                                        <img src="assets/images/profile/saha.jpg" height="98px" width="98px" >
                                     </span>
                                 </div>                          
                             </div>

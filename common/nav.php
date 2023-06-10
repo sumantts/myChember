@@ -64,6 +64,13 @@
 						</li>						
 						</ul>
 					</li>
+
+					<li class="nav-item pcoded-hasmenu <?php if($p == 'group_master'){ ?> active pcoded-trigger <?php } ?>">
+						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Master</span></a>
+						<ul class="pcoded-submenu">
+							<li <?php if($p == 'group_master'){ ?> class="active" <?php } ?> ><a href="?p=group_master&gr=master">Group Master</a></li>
+						</ul>
+					</li>
 												
 
 				</ul>				

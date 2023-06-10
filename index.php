@@ -39,6 +39,12 @@
 			$title = "Multi-Center";
 			include('settings/center/multi_center_setup.php');		
 		break;
+
+		//Master		
+		case 'group_master':
+			$title = "Group Master";
+			include('master/group_master/group_master.php');		
+		break;
 						
 		default:
 		include('signin/signin.php');

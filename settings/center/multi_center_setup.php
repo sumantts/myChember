@@ -87,16 +87,16 @@
                                 <thead>
                                     <tr>
                                         <th>Sl.No.</th>
-                                        <th>Name</th>
-                                        <th>Description</th>
+                                        <th>Code</th>
+                                        <th>Centre Name</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
                                         <th>Sl.No.</th>
-                                        <th>Name</th>
-                                        <th>Description</th>
+                                        <th>Code</th>
+                                        <th>Centre Name</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>
@@ -119,25 +119,24 @@
                             <form class="needs-validation" novalidate>
                                 <div class="form-row">
                                     <div class="col-md-12 mb-3">
-                                        <label for="serviceName">Service Name*</label>
-                                        <input type="text" class="form-control" id="serviceName" placeholder="Service Name" value="" required >
+                                        <label for="serviceName">Centre Code*</label>
+                                        <input type="text" class="form-control" id="serviceName" placeholder="Centre Code" value="" required >
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
                                         <div class="invalid-feedback">
-                                            Please provide Service Name.
+                                            Please provide Centre Code.
                                         </div>
                                     </div> 
                                     
                                     <div class="col-md-12 mb-3">
-                                        <label for="serviceDescription">Service Description*</label>
-                                        <!-- <input type="text" class="form-control" id="serviceDescription" placeholder="Group Description" value="" required> -->
-                                        <textarea class="form-control" id="serviceDescription" value="" required></textarea>
+                                        <label for="serviceDescription">Centre Name*</label>
+                                        <input type="text" class="form-control" id="serviceDescription" placeholder="Centre Name" value="" required> 
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
                                         <div class="invalid-feedback">
-                                            Please provide Service Description.
+                                            Please provide Centre Name.
                                         </div>
                                     </div> 
 
