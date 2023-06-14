@@ -95,7 +95,7 @@
     
     <script>
         //Left menu Scroll up to nth position
-        $(document).ready(function(){
+        /*$(document).ready(function(){
             var gr_offset = $('#<?=$gr?>').offset();
             var upto = parseInt(gr_offset.top) - 50;
             $("#nav_bar").scrollTop(upto, 0);
@@ -107,7 +107,7 @@
         $(document).on({
             ajaxStart: function() { $body.addClass("loading"); },
             ajaxStop: function() { $body.removeClass("loading"); }    
-        });
+        });*/
         // common for all function.js page 
         
         

@@ -80,31 +80,26 @@
                                 <div class="form-row">
                                     <div class="col-md-4 mb-3">
                                         <label for="firstName">Group Name</label>
-                                        <select class="mb-3 form-control" id="group_name">
-                                            <option>Group I</option>
-                                            <option>Group II</option>
-                                            <option>Group III</option>
+                                        <select class="mb-3 form-control" id="group_category">
+                                            <option value="0">Select Group Name</option>
                                         </select>
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
                                         <div class="invalid-feedback">
-                                            Please provide First name.
+                                            Please provide Group Name.
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <label for="lastName">Group category</label>
-                                        <select class="mb-3 form-control" id="group_category">
-                                            <option>Drug Allergy</option>
-                                            <option>Illness History</option>
-                                            <option>Major Complain</option>
-                                            <option>Observation</option>
+                                        <select class="mb-3 form-control" id="group_sub_category">
+                                            <option value="0">Select Group category</option>
                                         </select>
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                   
                                         <div class="invalid-feedback">
-                                            Please provide Last name.
+                                            Please provide Group category.
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
@@ -236,7 +231,7 @@
     <!-- Select 2 Dropdown  -->
     <script>
         $(document).ready(function() {
-            $('#group_name, #group_category').select2();
+            $('#group_sub_category, #group_category').select2();
         });
     </script>
     <!-- Select 2 Dropdown  -->

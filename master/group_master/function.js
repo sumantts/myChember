@@ -1,27 +1,73 @@
+function configureGroupName(){
+    $.ajax({
+        method: "POST",
+        url: "master/group_master/function.php",
+        data: { fn: "configureGroupName" }
+    })
+    .done(function( res ) {
+        $res1 = JSON.parse(res);
+        //console.log(JSON.stringify($res1));
+        if($res1.status == true){
+            $groupData = $res1.data;
+            $('#group_category').html('');
+            $option_string = "<option value='0'>Select Group Name</option>";
+            for($i = 0; $i < $groupData.length; $i++){
+                $option_string += "<option value='"+$groupData[$i].gc_id+"'>"+$groupData[$i].group_category+"</option>";
+            }
+            $('#group_category').html($option_string);
+        }
+        
+    });//end ajax
+}//end
+
+$('#group_category').on('change', function(){
+    $group_category = $('#group_category').val();
+
+    $.ajax({
+        method: "POST",
+        url: "master/group_master/function.php",
+        data: { fn: "configureGroupCategory", group_category: $group_category }
+    })
+    .done(function( res ) {
+        $res1 = JSON.parse(res);
+        //console.log(JSON.stringify($res1));
+        if($res1.status == true){
+            $groupCatData = $res1.data;
+            $('#group_sub_category').html('');
+            $option_string = "<option value='0'>Select Group Name</option>";
+            for($i = 0; $i < $groupCatData.length; $i++){
+                $option_string += "<option value='"+$groupCatData[$i].gc_id+"'>"+$groupCatData[$i].group_sub_category+"</option>";
+            }
+            $('#group_sub_category').html($option_string);
+        }
+        
+    });//end ajax
+
+});//end fun
 
 function validateForm(){
-    $serviceName = $('#serviceName').val().replace(/^\s+|\s+$/gm,'');
-    $serviceDescription = $('#serviceDescription').val().replace(/^\s+|\s+$/gm,'');
+    $group_category = $('#group_category').val().replace(/^\s+|\s+$/gm,'');
+    $group_sub_category = $('#group_sub_category').val().replace(/^\s+|\s+$/gm,'');
     $status = true;
 
-    if($serviceName == ''){
+    if($group_category == '0'){
         $status = false;
-        $('#serviceName').removeClass('is-valid');
-        $('#serviceName').addClass('is-invalid');
+        $('#group_category').removeClass('is-valid');
+        $('#group_category').addClass('is-invalid');
     }else{
         $status = true;
-        $('#serviceName').removeClass('is-invalid');
-        $('#serviceName').addClass('is-valid');
+        $('#group_category').removeClass('is-invalid');
+        $('#group_category').addClass('is-valid');
     }
 
-    if($serviceDescription == ''){
+    if($group_sub_category == '0'){
         $status = false;
-        $('#serviceDescription').removeClass('is-valid');
-        $('#serviceDescription').addClass('is-invalid');
+        $('#group_sub_category').removeClass('is-valid');
+        $('#group_sub_category').addClass('is-invalid');
     }else{
         $status = true;
-        $('#serviceDescription').removeClass('is-invalid');
-        $('#serviceDescription').addClass('is-valid');
+        $('#group_sub_category').removeClass('is-invalid');
+        $('#group_sub_category').addClass('is-valid');
     }    
 
     $('#submitForm_spinner').hide();
@@ -32,13 +78,13 @@ function validateForm(){
 }//en validate form
 
 function clearForm(){
-    $('#serviceName').val('');
-    $('#serviceName').removeClass('is-valid');
-    $('#serviceName').removeClass('is-invalid');
+    $('#group_category').val('');
+    $('#group_category').removeClass('is-valid');
+    $('#group_category').removeClass('is-invalid');
 
-    $('#serviceDescription').val('');
-    $('#serviceDescription').removeClass('is-valid');
-    $('#serviceDescription').removeClass('is-invalid');
+    $('#group_sub_category').val('');
+    $('#group_sub_category').removeClass('is-valid');
+    $('#group_sub_category').removeClass('is-invalid');
     $('#service_id').val('0');
 
 }//end 
@@ -56,11 +102,10 @@ $('#submitForm').click(function(){
         $formVallidStatus = validateForm();
 
         if($formVallidStatus == true){
-            $service_id = $('#service_id').val();
             $.ajax({
                 method: "POST",
-                url: "setup/services/function.php",
-                data: { fn: "saveServices", service_id: $service_id, serviceName: $serviceName, serviceDescription: $serviceDescription }
+                url: "master/group_master/function.php",
+                data: { fn: "getGroupMasterTable", group_category: $group_category, group_sub_category: $group_sub_category }
             })
             .done(function( res ) {
                 //console.log(res);
@@ -71,7 +116,8 @@ $('#submitForm').click(function(){
                     //$('#liveToast').toast('show');
                     clearForm();
                     $('#exampleModalLong').modal('hide');
-                    populateDataTable();
+                    $gc_id = '4';
+                    populateDataTable($gc_id);
                 }else{
                     
                 }
@@ -120,14 +166,14 @@ function deleteService($service_id){
 }//end delete
 
 
-function populateDataTable(){
+function populateDataTable($gc_id){
     $('#example').dataTable().fnClearTable();
     $('#example').dataTable().fnDestroy();
 
     $('#example').DataTable({ 
         responsive: true,
         serverMethod: 'GET',
-        ajax: {'url': 'master/group_master/function.php?fn=getSubcategories' },
+        ajax: {'url': 'master/group_master/function.php?fn=getGroupmasterTable&gc_id='+$gc_id },
         dom: 'Bfrtip',
         buttons: [
             {
@@ -162,5 +208,8 @@ function populateDataTable(){
 }//end fun
 
 $(document).ready(function () {
-    populateDataTable()
+    $gc_id = '4';
+    populateDataTable($gc_id)
+
+    configureGroupName()
 });
