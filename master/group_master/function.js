@@ -89,10 +89,12 @@ function clearForm(){
 
 }//end 
 
-$(".form-control").blur(function(){
+/*$(".form-control").blur(function(){
     $('#orgFormAlert').css("display", "none");
     $formVallidStatus = validateForm();
-});
+});*/
+
+
 
 $('#submitForm').click(function(){
     $('#submitForm_spinner').show();
@@ -102,68 +104,37 @@ $('#submitForm').click(function(){
         $formVallidStatus = validateForm();
 
         if($formVallidStatus == true){
-            $.ajax({
-                method: "POST",
-                url: "master/group_master/function.php",
-                data: { fn: "getGroupMasterTable", group_category: $group_category, group_sub_category: $group_sub_category }
-            })
-            .done(function( res ) {
-                //console.log(res);
-                $res1 = JSON.parse(res);
-                if($res1.status == true){
-                    $('#orgFormAlert1').css("display", "block");
-                    $('.toast-right').toast('show');
-                    //$('#liveToast').toast('show');
-                    clearForm();
-                    $('#exampleModalLong').modal('hide');
-                    $gc_id = '4';
-                    populateDataTable($gc_id);
-                }else{
-                    
-                }
-            });//end ajax
+            populateDataTable($group_sub_category)
         }
 
     }, 500)    
 })
 
-function editService($service_id){
-    $('#exampleModalLong').modal('show');
-    $.ajax({
-        method: "POST",
-        url: "setup/services/function.php",
-        data: { fn: "getServiceData", service_id: $service_id }
-    })
-    .done(function( res ) {
-        //console.log(res);
-        $res1 = JSON.parse(res);
-        if($res1.status == true){
-            $('#serviceName').val($res1.name);
-            $('#serviceDescription').val($res1.description);
-            $('#service_id').val($service_id);
-        }
-    });//end ajax
-
-}
-
 //Delete function	
-function deleteService($service_id){
-    if (confirm('Are you sure to delete the Service?')) {
+//function deleteService($service_id){
+$('#example').on('click', '.delete_name', function(){
+    if (confirm('Are you sure to delete the Name?')) {
+        $gm_id = $(this).data('gm_id');
+        $group_sub_category = $('#group_sub_category').val().replace(/^\s+|\s+$/gm,'');
+        $('#orgTableAlert').css("display", "none");
+        $('#orgTableAlert1').css("display", "none");
+
         $.ajax({
             method: "POST",
             url: "master/group_master/function.php",
-            data: { fn: "deleteService", service_id: $service_id }
+            data: { fn: "deleteName", gm_id: $gm_id }
         })
         .done(function( res ) {
             //console.log(res);
             $res1 = JSON.parse(res);
             if($res1.status == true){
-                $('#orgFormAlert').show();
-                populateDataTable();
+                $('#orgTableAlert').show();
+                populateDataTable($group_sub_category);
             }
         });//end ajax
     }		
-}//end delete
+}) 
+//}//end delete
 
 
 function populateDataTable($gc_id){
@@ -207,9 +178,78 @@ function populateDataTable($gc_id){
     });
 }//end fun
 
+
+//Group Name Add start
+
+function validateFormGr(){
+    $option_name = $('#option_name').val().replace(/^\s+|\s+$/gm,'');
+    $status = true;
+
+    if($option_name == ''){
+        $status = false;
+        $('#option_name').removeClass('is-valid');
+        $('#option_name').addClass('is-invalid');
+    }else{
+        $status = true;
+        $('#option_name').removeClass('is-invalid');
+        $('#option_name').addClass('is-valid');
+    } 
+
+    $('#submitForm1_spinner').hide();
+    $('#submitForm1_spinner_text').hide();
+    $('#submitForm1_text').show();
+
+    return $status;
+}//en validate form
+
+function clearFormGr(){
+    $('#option_name').val('');
+    $('#option_name').removeClass('is-valid');
+    $('#option_name').removeClass('is-invalid');
+}//end 
+
+$('#submitFormGr').click(function(){
+    $('#submitForm1_spinner').show();
+    $('#submitForm1_spinner_text').show();
+    $('#submitForm1_text').hide();
+    setTimeout(function(){
+        $grFormVallidStatus = validateFormGr();
+
+        if($grFormVallidStatus == true){
+            $group_category = $('#group_category').val().replace(/^\s+|\s+$/gm,'');
+            $group_sub_category = $('#group_sub_category').val().replace(/^\s+|\s+$/gm,'');
+            $option_name = $('#option_name').val().replace(/^\s+|\s+$/gm,'');
+            $('#orgTableAlert').css("display", "none");
+            $('#orgTableAlert1').css("display", "none");
+
+            $.ajax({
+                method: "POST",
+                url: "master/group_master/function.php",
+                data: { fn: "saveOptionName", group_category: $group_category, group_sub_category: $group_sub_category, option_name: $option_name }
+            })
+            .done(function( res ) {
+                //console.log(res);
+                $res1 = JSON.parse(res);
+                if($res1.status == true){
+                    $('#orgTableAlert1').css("display", "block");
+                    $('.toast-right').toast('show');
+                    //$('#liveToast').toast('show');
+                    clearFormGr();
+                    //$('#exampleModalLong').modal('hide');
+                    populateDataTable($group_sub_category);
+                }else{
+                    alert($res1.msg);
+                }
+            });//end ajax
+        }
+
+    }, 500)    
+})
+//Group Name Add End
+
 $(document).ready(function () {
-    $gc_id = '4';
-    populateDataTable($gc_id)
+    //$gc_id = '4';
+    //populateDataTable($gc_id)
 
     configureGroupName()
 });

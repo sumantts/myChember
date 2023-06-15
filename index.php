@@ -36,8 +36,18 @@
 		break;
 		
 		case 'multi_center_setup':
-			$title = "Multi-Center";
+			$title = "Multi Center";
 			include('settings/center/multi_center_setup.php');		
+		break;
+		
+		case 'configure_services':
+			$title = "Configure Services";
+			include('settings/configure_services/configure_services.php');		
+		break;
+		
+		case 'service_based_pricing':
+			$title = "Service Based Pricing";
+			include('settings/service_based_pricing/service_based_pricing.php');		
 		break;
 
 		//Master		

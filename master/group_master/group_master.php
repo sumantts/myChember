@@ -146,12 +146,12 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;" id="orgFormAlert">
+                            <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;" id="orgTableAlert">
                                 <strong>Success!</strong> Your Data Deleted successfully.
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             </div>
-                            <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;" id="orgFormAlert1">
-                                <strong>Success!</strong> Your Service saved successfully.
+                            <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;" id="orgTableAlert1">
+                                <strong>Success!</strong> Your Data saved successfully.
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             </div>
 
@@ -191,27 +191,26 @@
                                 <form class="needs-validation" novalidate>
                                     <div class="form-row">
                                         <div class="col-md-12 mb-3">
-                                            <label for="serviceName">Name*</label>
-                                            <input type="text" class="form-control" id="serviceName" placeholder="Name" value="" required >
+                                            <label for="option_name">Name*</label>
+                                            <input type="text" class="form-control" id="option_name" placeholder="Name" value="" required >
                                             <div class="valid-feedback">
                                                 Looks good!
                                             </div>                                    
                                             <div class="invalid-feedback">
-                                                Please provide Name.
-                                            </div>
+                                                Please Provide Name.
+                                            </div>  
                                         </div> 
 
                                     </div>
-                                </form>
+                                </form>   
                             </div>
                             <div class="modal-footer">
-                                <input type="hidden" id="service_id" value="0">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                                <button class="btn  btn-primary" type="button" id="submitForm">
-                                    <span class="spinner-border spinner-border-sm" role="status" style="display: none;" id="submitForm_spinner"></span>
-                                    <span class="load-text" style="display: none;" id="submitForm_spinner_text">Loading...</span>
-                                    <span class="btn-text" id="submitForm_text">Add</span>
+                                <button class="btn  btn-primary" type="button" id="submitFormGr">
+                                    <span class="spinner-border spinner-border-sm" role="status" style="display: none;" id="submitForm1_spinner"></span>
+                                    <span class="load-text" style="display: none;" id="submitForm1_spinner_text">Loading...</span>
+                                    <span class="btn-text" id="submitForm1_text">Add</span>
                                 </button>
                             </div>
                         </div>
