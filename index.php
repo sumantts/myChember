@@ -54,6 +54,11 @@
 		case 'new_patient_registration':
 			$title = "New Patient Registration";
 			include('patient_management/new_patient_registration/new_patient_registration.php');		
+		break;		
+
+		case 'investigation':
+			$title = "Investigation";
+			include('patient_management/investigation/investigation.php');		
 		break;
 
 		//Master		
