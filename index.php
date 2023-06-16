@@ -50,6 +50,12 @@
 			include('settings/service_based_pricing/service_based_pricing.php');		
 		break;
 
+		//Patient Management		
+		case 'new_patient_registration':
+			$title = "New Patient Registration";
+			include('patient_management/new_patient_registration/new_patient_registration.php');		
+		break;
+
 		//Master		
 		case 'group_master':
 			$title = "Group Master";

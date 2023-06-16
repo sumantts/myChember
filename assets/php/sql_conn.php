@@ -47,7 +47,7 @@
 	$logo_text = 'myChember';
 
     $p_name = 'myChember';
-	$logo = 'logo.png';
+	$logo = 'NewLogo.png';
 	$ico = 'favicon.ico';
 	
 	
