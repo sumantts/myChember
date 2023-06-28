@@ -15,7 +15,7 @@
 
 	switch($p){
 		case 'signin':
-        $title = "Signin";
+        $title = "Sign In";
 		include('signin/signin.php');
 		break;
 

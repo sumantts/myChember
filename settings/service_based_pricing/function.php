@@ -73,7 +73,7 @@
 		$data[1] = "RG Stone Urology & Laparoscopy Hospital";
 		$data[2] = "Root Canal";
 		$data[3] = "UR2";
-		$data[4] = "1500";
+		$data[4] = "1500.00";
 		$data[5] = "<a href='javascript: void(0)' data-center_id='1'><i class='fa fa-edit' aria-hidden='true' ></i>  </a><a href='javascript: void(0)' data-center_id='2'>  <i class='fa fa-trash' aria-hidden='true' data-center_id='1' ></i></a>";
 		array_push($mainData, $data);
 
@@ -81,7 +81,7 @@
 		$data[1] = "Balananda Brahmachari Hospital And Research Centre";
 		$data[2] = "Root Canal";
 		$data[3] = "UR2";
-		$data[4] = "1200";
+		$data[4] = "1200.00";
 		$data[5] = "<a href='javascript: void(0)' data-center_id='1'><i class='fa fa-edit' aria-hidden='true' ></i>  </a><a href='javascript: void(0)' data-center_id='2'>  <i class='fa fa-trash' aria-hidden='true' data-center_id='1' ></i></a>";
 		array_push($mainData, $data);
 

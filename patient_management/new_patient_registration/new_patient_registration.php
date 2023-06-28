@@ -128,7 +128,7 @@
                                 <div class="form-row">
                                     <div class="col-md-3 mb-3">
                                         <label for="Parameter">Patient Id*</label>
-                                        <input type="text" class="form-control" id="Parameter" placeholder="Centre Name" value="<?=rand(100000, 999999)?>" readonly >
+                                        <input type="text" class="form-control" id="Parameter" placeholder="Centre Name" value="250603" readonly >
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    

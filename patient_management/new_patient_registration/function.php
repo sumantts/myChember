@@ -70,22 +70,22 @@
 		$mysqli->close();*/
 
 		$data[0] = 1;
-		$data[1] = "100000";
+		$data[1] = "250601";
 		$data[2] = "Banalata Sen";
 		$data[3] = "Female";
 		$data[4] = "47";
 		$data[5] = "9876543210";
-		$data[6] = "Doctor Len";
+		$data[6] = "Howrah";
 		$data[7] = "<a href='javascript: void(0)' data-center_id='1'><i class='fa fa-edit' aria-hidden='true' ></i>  </a><a href='javascript: void(0)' data-center_id='2'>  <i class='fa fa-trash' aria-hidden='true' data-center_id='1' ></i></a>";
 		array_push($mainData, $data);
 
 		$data[0] = 2;
-		$data[1] = "100001";
+		$data[1] = "250602";
 		$data[2] = "Sukumar Roy";
 		$data[3] = "Male";
 		$data[4] = "57";
 		$data[5] = "9876543201";
-		$data[6] = "Doctor Len";
+		$data[6] = "Kolkata";
 		$data[7] = "<a href='javascript: void(0)' data-center_id='1'><i class='fa fa-edit' aria-hidden='true' ></i>  </a><a href='javascript: void(0)' data-center_id='2'>  <i class='fa fa-trash' aria-hidden='true' data-center_id='1' ></i></a>";
 		array_push($mainData, $data);
 

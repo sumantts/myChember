@@ -72,13 +72,15 @@
 		$data[0] = 1;
 		$data[1] = "BBH";
 		$data[2] = "Balananda Brahmachari Hospital And Research Centre";
-		$data[3] = "<a href='javascript: void(0)' data-center_id='1'><i class='fa fa-edit' aria-hidden='true' ></i>  </a><a href='javascript: void(0)' data-center_id='2'>  <i class='fa fa-trash' aria-hidden='true' data-center_id='1' ></i></a>";
+		$data[3] = "500.00";
+		$data[4] = "<a href='javascript: void(0)' data-center_id='1'><i class='fa fa-edit' aria-hidden='true' ></i>  </a><a href='javascript: void(0)' data-center_id='2'>  <i class='fa fa-trash' aria-hidden='true' data-center_id='1' ></i></a>";
 		array_push($mainData, $data);
 
 		$data[0] = 2;
 		$data[1] = "RGS";
 		$data[2] = "RG Stone Urology & Laparoscopy Hospital";
-		$data[3] = "<a href='javascript: void(0)' data-center_id='2'><i class='fa fa-edit' aria-hidden='true'></i> </a><a href='javascript: void(0)' data-center_id='2'> <i class='fa fa-trash' aria-hidden='true' ></i> </a>";
+		$data[3] = "750.00";
+		$data[4] = "<a href='javascript: void(0)' data-center_id='2'><i class='fa fa-edit' aria-hidden='true'></i> </a><a href='javascript: void(0)' data-center_id='2'> <i class='fa fa-trash' aria-hidden='true' ></i> </a>";
 		array_push($mainData, $data);
 
 		$return_array['data'] = $mainData;

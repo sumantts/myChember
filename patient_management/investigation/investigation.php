@@ -51,7 +51,7 @@
             <!-- [ Main Content ] start -->
             <div class="row">
 
-                <!-- [ sample-page ] start -->
+                <!-- [ sample-page Patient Info ] start -->
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-header" id="toggleBtn1">
@@ -75,7 +75,7 @@
                                 <div class="form-row">                                    
                                     <div class="col-md-3 mb-3">
                                         <label for="Parameter">Patient Id*</label>
-                                        <input type="text" class="form-control" id="Parameter" placeholder="Patient Id" value="<?=rand(100000, 999999)?>" required >
+                                        <input type="text" class="form-control" id="Parameter" placeholder="Patient Id" value="250601" required >
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
@@ -85,7 +85,7 @@
                                     </div>                                   
                                     <div class="col-md-3 mb-3">
                                         <label for="Parameter">Name</label>
-                                        <input type="text" class="form-control" id="Parameter" placeholder="Name" value="" readonly >
+                                        <input type="text" class="form-control" id="Parameter" placeholder="Name" value="Banalata Sen" readonly >
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
@@ -95,7 +95,7 @@
                                     </div>                                   
                                     <div class="col-md-3 mb-3">
                                         <label for="Parameter">Age</label>
-                                        <input type="text" class="form-control" id="Parameter" placeholder="Age" value="" readonly >
+                                        <input type="text" class="form-control" id="Parameter" placeholder="Age" value="47" readonly >
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
@@ -105,7 +105,7 @@
                                     </div>                                   
                                     <div class="col-md-3 mb-3">
                                         <label for="Parameter">Visit Count</label>
-                                        <input type="text" class="form-control" id="Parameter" placeholder="Visit Count" value="" readonly >
+                                        <input type="text" class="form-control" id="Parameter" placeholder="Visit Count" value="1" readonly >
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
@@ -118,7 +118,7 @@
                                 <div class="form-row">
                                     <div class="col-md-3 mb-3">
                                         <label for="Parameter">Visit Date*</label>
-                                        <input type="date" class="form-control" id="Parameter" placeholder="Visit Date" value="" required >
+                                        <input type="date" class="form-control" id="Parameter" placeholder="Visit Date" value="<?=date('Y-m-d')?>" required >
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
@@ -139,8 +139,8 @@
                                     </div> 
                                     
                                     <div class="col-md-2 mb-3">
-                                        <label for="serviceDescription">Weight (Kg)</label>
-                                        <input type="numver" class="form-control" id="Location" placeholder="Weight (Kg)" value="" > 
+                                        <label for="serviceDescription">Weight</label>
+                                        <input type="numver" class="form-control" id="Location" placeholder="Kg" value="" > 
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
@@ -150,8 +150,8 @@
                                     </div>
                                     
                                     <div class="col-md-2 mb-3">
-                                        <label for="serviceDescription">Height (Cm)</label>
-                                        <input type="text" class="form-control" id="serviceDescription" placeholder="Height (Cm)" value="" > 
+                                        <label for="serviceDescription">Height</label>
+                                        <input type="text" class="form-control" id="serviceDescription" placeholder="Cm" value="" > 
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
@@ -161,8 +161,8 @@
                                     </div> 
                                     
                                     <div class="col-md-2 mb-3">
-                                        <label for="serviceDescription">Pulse (/Min)</label>
-                                        <input type="text" class="form-control" id="serviceDescription" placeholder="Pulse (/Min)" value="" > 
+                                        <label for="serviceDescription">Pulse</label>
+                                        <input type="text" class="form-control" id="serviceDescription" placeholder="/Min" value="" > 
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
@@ -172,10 +172,21 @@
                                     </div> 
                                 </div>
 
-                                <div class="form-row">                                    
-                                    <div class="col-md-2 mb-3">
-                                        <label for="serviceDescription">Temp (Deg F)</label>
-                                        <input type="numver" class="form-control" id="Location" placeholder="Temp (Deg F)" value="" > 
+                                <div class="form-row">                                     
+                                    <div class="col-md-3 mb-3">
+                                        <label for="serviceDescription">Respiration Rate</label>
+                                        <input type="text" class="form-control" id="serviceDescription" placeholder="Breaths per Minute" value="" > 
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>                                    
+                                        <div class="invalid-feedback">
+                                            Please provide Respiration Rate (breaths per minute).
+                                        </div>
+                                    </div>     
+
+                                    <div class="col-md-3 mb-3">
+                                        <label for="serviceDescription">Temperature</label>
+                                        <input type="numver" class="form-control" id="Location" placeholder="Deg F" value="" > 
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
@@ -184,9 +195,9 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="col-md-2 mb-3">
-                                        <label for="serviceDescription">BP SYS</label>
-                                        <input type="text" class="form-control" id="serviceDescription" placeholder="BP SYS" value="" > 
+                                    <div class="col-md-3 mb-3">
+                                        <label for="serviceDescription">BP</label>
+                                        <input type="text" class="form-control" id="serviceDescription" placeholder="SYS" value="" > 
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
@@ -195,9 +206,9 @@
                                         </div>
                                     </div> 
                                     
-                                    <div class="col-md-2 mb-3">
-                                        <label for="serviceDescription">BP DIA</label>
-                                        <input type="text" class="form-control" id="serviceDescription" placeholder="BP DIA" value="" > 
+                                    <div class="col-md-3 mb-3">
+                                        <label for="serviceDescription">BP</label>
+                                        <input type="text" class="form-control" id="serviceDescription" placeholder="DIA" value="" > 
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
@@ -205,8 +216,11 @@
                                             Please provide BP DIA.
                                         </div>
                                     </div> 
+                                </div>
+
+                                <div class="form-row"> 
                                     
-                                    <div class="col-md-2 mt-4">
+                                    <div class="col-md-3 mt-4">
                                         <button class="btn  btn-primary" type="button" id="submitForm">
                                             <span class="spinner-border spinner-border-sm" role="status" style="display: none;" id="submitForm_spinner"></span>
                                             <span class="load-text" style="display: none;" id="submitForm_spinner_text">Loading...</span>
@@ -223,8 +237,12 @@
                 </div>
                 <!-- [ sample-page ] end -->
                 
-                <!-- [ sample-page ] start -->
+                <!-- [ sample-page Drug Allergy ] start -->
                 <div class="col-sm-12">
+                    <div class="page-header-title">
+                        <h5 class="m-b-10" style="color: #f00;text-align: center;">A. PAST MEDICATION HISTORY</h5>
+                    </div>
+
                     <div class="card">
                         <div class="card-header" id="toggleBtn2">
                             <h5>Drug Allergy</h5>
@@ -272,7 +290,7 @@
                 </div>
                 <!-- [ sample-page ] end -->
                 
-                <!-- [ sample-page ] start -->
+                <!-- [ sample-page Illness History ] start -->
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-header" id="toggleBtn3">
@@ -321,7 +339,7 @@
                 </div>
                 <!-- [ sample-page ] end -->
                 
-                <!-- [ sample-page ] start -->
+                <!-- [ sample-page Major Complaints ] start -->
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-header" id="toggleBtn4">
@@ -345,7 +363,7 @@
                                 <div class="form-row">
                                     <div class="col-md-9 mb-3">
                                         <label for="majorComplaints">Major Complaints</label>
-                                        <select class="mb-3 form-control" id="majorComplaints" multiple>
+                                        <select class="mb-3 form-control" id="majorComplaints">
                                             <option value="0">Select Major Complaints</option>
                                         </select>
                                         <div class="valid-feedback">
@@ -365,13 +383,42 @@
                                     </div>                                    
                                 </div>
                             </form>
+
+                            
+
+
+                            <div class="table-responsive">
+                                <table id="majorCompliTable" class="table table-striped" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Sl.No.</th>
+                                            <th>Complaints</th>
+                                            <th>Duration</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tfoot>
+                                        <tr>
+                                            <th>Sl.No.</th>
+                                            <th>Complaints</th>
+                                            <th>Duration</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+
                         </div>
                     </div>                
                 </div>
                 <!-- [ sample-page ] end -->
                 
-                <!-- [ sample-page ] start -->
+                <!-- [ sample-page Observation ] start -->
                 <div class="col-sm-12">
+                    <div class="page-header-title">
+                        <h5 class="m-b-10" style="color: #f00;text-align: center;">B. PRESENT RECOMMENDATION</h5>
+                    </div>
                     <div class="card">
                         <div class="card-header" id="toggleBtn5">
                             <h5>Observation</h5>
@@ -419,7 +466,7 @@
                 </div>
                 <!-- [ sample-page ] end -->
                 
-                <!-- [ sample-page ] start -->
+                <!-- [ sample-page Advice Given ] start -->
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-header" id="toggleBtn6">
@@ -468,7 +515,7 @@
                 </div>
                 <!-- [ sample-page ] end -->
                 
-                <!-- [ sample-page ] start -->
+                <!-- [ sample-page Diagnosis] start -->
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-header" id="toggleBtn7">
@@ -517,7 +564,7 @@
                 </div>
                 <!-- [ sample-page ] end -->
                 
-                <!-- [ sample-page ] start -->
+                <!-- [ sample-page Investigation ] start -->
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-header" id="toggleBtn8">
@@ -564,9 +611,9 @@
                         </div>
                     </div>                
                 </div>
-                <!-- [ sample-page ] end -->
+                <!-- [ sample-page Procedures ] end -->
                 
-                <!-- [ sample-page ] start -->
+                <!-- [ sample-page Procedures ] start -->
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-header" id="toggleBtn9">
@@ -615,7 +662,7 @@
                 </div>
                 <!-- [ sample-page ] end -->
                 
-                <!-- [ sample-page ] start -->
+                <!-- [ sample-page Medicine ] start -->
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-header" id="toggleBtn10">
@@ -639,7 +686,7 @@
                                 <div class="form-row">
                                     <div class="col-md-9 mb-3">
                                         <label for="medicine">Medicine</label>
-                                        <select class="mb-3 form-control" id="medicine" multiple>
+                                        <select class="mb-3 form-control" id="medicine">
                                             <option value="0">Select Medicine</option>
                                         </select>
                                         <div class="valid-feedback">
@@ -662,7 +709,7 @@
 
 
                             <div class="table-responsive">
-                                <table id="example" class="table table-striped" style="width:100%">
+                                <table id="exampleMedi" class="table table-striped" style="width:100%">
                                     <thead>
                                         <tr>
                                             <th>Sl.No.</th>
@@ -678,7 +725,7 @@
                                         </tr>
                                     </thead>
 
-                                    <tbody>
+                                    <!-- <tbody>
                                         <tr>
                                             <td>1</td>
                                             <td> Hydroxychloroquine</td>
@@ -691,7 +738,7 @@
                                             <td>7</td>
                                             <td><a href='javascript: void(0)' class='delete_name'><i class='fa fa-trash' aria-hidden='true'></i></a></td>
                                         </tr>
-                                    </tbody>
+                                    </tbody> -->
 
                                     <tfoot>
                                         <tr>
@@ -717,16 +764,136 @@
                 </div>
                 <!-- [ sample-page ] end -->
 
+                <!-- [ sample-page Documents ] start -->
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header" id="toggleBtn11">
+                            <h5>Documents</h5>
+                            <div class="card-header-right">
+                                <div class="btn-group card-option">
+                                    <button type="button" class="btn dropdown-toggle btn-icon" aria-haspopup="true"  aria-expanded="false">
+                                        <i class="feather icon-more-horizontal"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body" id="toggleBody11">
+                            <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;" id="orgFormAlert">
+                                <strong>Success!</strong> Your Data saved successfully.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+
+                            <form class="needs-validation" novalidate>
+                                <div class="form-row">                                    
+                                    <div class="col-md-3 mb-3">
+                                        <label for="Parameter">Document Type*</label>
+                                        <input type="text" class="form-control" id="Parameter" placeholder="Document Type" value="" required >
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>                                    
+                                        <div class="invalid-feedback">
+                                            Please provide Document Type.
+                                        </div>
+                                    </div> 
+
+                                    <div class="col-md-4 mb-3">
+                                        <label for="lastName">Document Photo</label>
+                                        
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                        </div>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>                                   
+                                        <div class="invalid-feedback">
+                                            Please provide Document.
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-2 mt-4">
+                                        <button class="btn  btn-primary" type="button" id="submitForm">
+                                            <span class="spinner-border spinner-border-sm" role="status" style="display: none;" id="submitForm_spinner"></span>
+                                            <span class="load-text" style="display: none;" id="submitForm_spinner_text">Loading...</span>
+                                            <span class="btn-text" id="submitForm_text">Upload</span>
+                                        </button>
+                                    </div>
+                                </div>                                
+                                <!-- <button class="btn  btn-primary" type="button" id="submitForm">Submit form</button> -->
+                            </form>
+
+                            <div class="row">  
+                                <div class="col-md-2 mb-3">  
+                                    <span class="hei-100 wid-100 bg-light d-inline-block mr-2 border border-primary" data-toggle="tooltip" title="Medical report 1">
+                                        <img src="assets/images/medical_report/medi_rep1.jpeg" height="98px" width="98px" >
+                                    </span>
+                                </div>   
+                                <div class="col-md-2 mb-3">  
+                                    <span class="hei-100 wid-100 bg-light d-inline-block mr-2 border border-primary" data-toggle="tooltip" title="Medical report 2">
+                                        <img src="assets/images/medical_report/medi_rep2.jpeg" height="98px" width="98px" >
+                                    </span>
+                                </div>   
+                                <div class="col-md-2 mb-3">  
+                                    <span class="hei-100 wid-100 bg-light d-inline-block mr-2 border border-primary" data-toggle="tooltip" title="Medical report 3">
+                                        <img src="assets/images/medical_report/medi_rep3.jpeg" height="98px" width="98px" >
+                                    </span>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+                <!-- [ sample-page ] end -->
+
 
 
                 <!-- [ sample-table ] start -->
+
+                <!-- Major compliance Modal start -->
+                <div id="majorCompliModal" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="majorCompliModalTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="majorCompliModalTitle">Compliance Name</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="needs-validation" novalidate>
+                                    <div class="form-row">
+                                        <div class="col-md-12 mb-2">
+                                            <label for="duration">Duration</label>
+                                            <input type="text" class="form-control" id="duration" value="" required >
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>                                    
+                                            <div class="invalid-feedback">
+                                                Please Provide Duration.
+                                            </div>  
+                                        </div> 
+                                    </div>
+                                </form>   
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                <button class="btn  btn-primary" type="button" id="submitComplianceAdd">
+                                    <span class="spinner-border spinner-border-sm" role="status" style="display: none;" id="submitForm2_spinner"></span>
+                                    <span class="load-text" style="display: none;" id="submitForm2_spinner_text">Loading...</span>
+                                    <span class="btn-text" id="submitForm2_text">Add</span>
+                                    <input type="hidden" name="slnoMc" id="slnoMc" value="1">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Major compliance Modal end -->
 
                 <!-- Modal start -->
                 <div id="medicineModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="medicineModalTitle" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="medicineModalTitle">Hydroxychloroquine</h5>
+                                <h5 class="modal-title" id="medicineModalTitle">Medicine Name</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             </div>
                             <div class="modal-body">
@@ -734,17 +901,17 @@
                                     <div class="form-row">
                                         <div class="col-md-3 mb-2">
                                             <label for="option_name">Unit</label>
-                                            <input type="number" class="form-control" id="option_name" placeholder="Unit" value="" required >
+                                            <input type="number" class="form-control" id="medicineUnit" placeholder="Unit" value="" required >
                                             <div class="valid-feedback">
                                                 Looks good!
                                             </div>                                    
                                             <div class="invalid-feedback">
-                                                Please Provide Name.
+                                                Please Provide Unit.
                                             </div>  
                                         </div>
                                         <div class="col-md-3 mb-2">
                                             <label for="option_name">Morning</label>
-                                            <select class="mb-3 form-control" id="group_category">
+                                            <select class="mb-3 form-control" id="morning_yn">
                                                 <option value="0">Select Yes/No</option>
                                                 <option value="1">Yes</option>
                                                 <option value="2">No</option>
@@ -753,12 +920,12 @@
                                                 Looks good!
                                             </div>                                    
                                             <div class="invalid-feedback">
-                                                Please Provide Name.
+                                                Please Select Yes/No.
                                             </div>  
                                         </div>
                                         <div class="col-md-3 mb-2">
                                             <label for="option_name">Afternoon</label>
-                                            <select class="mb-3 form-control" id="group_category">
+                                            <select class="mb-3 form-control" id="afternoon_yn">
                                                 <option value="0">Select Yes/No</option>
                                                 <option value="1">Yes</option>
                                                 <option value="2">No</option>
@@ -767,12 +934,12 @@
                                                 Looks good!
                                             </div>                                    
                                             <div class="invalid-feedback">
-                                                Please Provide Name.
+                                                Please Select Yes/No.
                                             </div>  
                                         </div> 
                                         <div class="col-md-3 mb-2">
                                             <label for="option_name">Evening</label>
-                                            <select class="mb-3 form-control" id="group_category">
+                                            <select class="mb-3 form-control" id="evening_yn">
                                                 <option value="0">Select Yes/No</option>
                                                 <option value="1">Yes</option>
                                                 <option value="2">No</option>
@@ -781,14 +948,14 @@
                                                 Looks good!
                                             </div>                                    
                                             <div class="invalid-feedback">
-                                                Please Provide Name.
+                                                Please Select Yes/No.
                                             </div>  
                                         </div>  
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-3 mb-2">
                                             <label for="option_name">Night</label>
-                                            <select class="mb-3 form-control" id="group_category">
+                                            <select class="mb-3 form-control" id="night_yn">
                                                 <option value="0">Select Yes/No</option>
                                                 <option value="1">Yes</option>
                                                 <option value="2">No</option>
@@ -797,27 +964,27 @@
                                                 Looks good!
                                             </div>                                    
                                             <div class="invalid-feedback">
-                                                Please Provide Name.
+                                                Please Select Yes/No.
                                             </div>  
                                         </div> 
                                         <div class="col-md-3 mb-2">
-                                            <label for="option_name">Special Condition</label>
-                                            <input type="text" class="form-control" id="option_name" placeholder="Special Condition" value="" required >
+                                            <label for="specialCondition">Special Condition</label>
+                                            <input type="text" class="form-control" id="specialCondition" placeholder="Special Condition" value="" required >
                                             <div class="valid-feedback">
                                                 Looks good!
                                             </div>                                    
                                             <div class="invalid-feedback">
-                                                Please Provide Name.
+                                                Please Special Condition.
                                             </div>  
                                         </div> 
                                         <div class="col-md-3 mb-2">
-                                            <label for="option_name">Days</label>
-                                            <input type="number" class="form-control" id="option_name" placeholder="Days" value="" required >
+                                            <label for="days">Days</label>
+                                            <input type="number" class="form-control" id="days" placeholder="Days" value="" required >
                                             <div class="valid-feedback">
                                                 Looks good!
                                             </div>                                    
                                             <div class="invalid-feedback">
-                                                Please Provide Name.
+                                                Please Days.
                                             </div>  
                                         </div>
 
@@ -831,6 +998,7 @@
                                     <span class="spinner-border spinner-border-sm" role="status" style="display: none;" id="submitForm1_spinner"></span>
                                     <span class="load-text" style="display: none;" id="submitForm1_spinner_text">Loading...</span>
                                     <span class="btn-text" id="submitForm1_text">Add</span>
+                                    <input type="hidden" name="slno" id="slno" value="1">
                                 </button>
                             </div>
                         </div>

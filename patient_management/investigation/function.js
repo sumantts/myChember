@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     $('#drugAllergy, #illnessHistory, #majorComplaints, #observation, #adviceGiven, #diagnosis, #investigation, #procedures, #medicine').select2();
 
-    $('#toggleBody1').slideToggle(100);
+    //$('#toggleBody1').slideToggle(100);
     $('#toggleBody2').slideToggle(100);
     $('#toggleBody3').slideToggle(100);
     $('#toggleBody4').slideToggle(100);
@@ -14,6 +14,7 @@ $(document).ready(function() {
     $('#toggleBody8').slideToggle(100);
     $('#toggleBody9').slideToggle(100);
     $('#toggleBody10').slideToggle(100);
+    $('#toggleBody11').slideToggle(100);
 });
 
 $('#toggleBtn1').on('click', function(){
@@ -56,9 +57,26 @@ $('#toggleBtn10').on('click', function(){
     $('#toggleBody10').slideToggle(300);
 })
 
+$('#toggleBtn11').on('click', function(){
+    $('#toggleBody11').slideToggle(300);
+})
+
 $('#medicine').on('change', function(){
-    console.log('Open a modal here')
-    $('#medicineModal').modal('show');
+    $medicine = $('#medicine').val();
+    if($medicine > 0){
+        $medicine_name = $('#medicine option:selected').text();
+        $('#medicineModalTitle').html($medicine_name);
+        $('#medicineModal').modal('show');
+    }
+});
+
+$('#majorComplaints').on('change', function(){
+    $majorComplaints = $('#majorComplaints').val();
+    if($majorComplaints > 0){
+        $majorComplaintsName = $('#majorComplaints option:selected').text();
+        $('#majorCompliModalTitle').html($majorComplaintsName);
+        $('#majorCompliModal').modal('show');
+    }
 });
 
 function configureAllDropDown(){
@@ -99,7 +117,8 @@ function configureAllDropDown(){
                 $option_string_pr = "";
 
                 $('#medicine').html('');
-                $option_string_me = "";
+                $option_string_me = "<option value='0'>Select Medicine</option>";
+                $option_string_mc = "<option value='0'>Select Major Complaints</option>";
 
                 for($i = 0; $i < $rows.length; $i++){
                     //4. Drug Allergy
@@ -192,76 +211,217 @@ $('#group_category').on('change', function(){
 
 });//end fun
 
-function validateForm(){
-    $group_category = $('#group_category').val().replace(/^\s+|\s+$/gm,'');
-    $group_sub_category = $('#group_sub_category').val().replace(/^\s+|\s+$/gm,'');
+$(".form-control").blur(function(){
+    $('#orgFormAlert').css("display", "none");
+    $formVallidStatus = validateMedicineForm();
+    $majorCompFormVallidStatus = validateMajorCompForm();
+});
+
+//Medicine
+function validateMedicineForm(){
+    $medicineUnit = $('#medicineUnit').val().replace(/^\s+|\s+$/gm,'');
+    $morning_yn = $('#morning_yn').val();
+    $morning_yn_text = $('#morning_yn option:selected').text();
+    $afternoon_yn = $('#afternoon_yn').val();
+    $afternoon_yn_text = $('#afternoon_yn option:selected').text();
+    $evening_yn = $('#evening_yn').val();
+    $evening_yn_text = $('#evening_yn option:selected').text();
+    $night_yn = $('#night_yn').val();
+    $night_yn_text = $('#night_yn option:selected').text();
+    $specialCondition = $('#specialCondition').val().replace(/^\s+|\s+$/gm,'');
+    $days = $('#days').val().replace(/^\s+|\s+$/gm,'');
+    $slno = $('#slno').val();
+    
     $status = true;
 
-    if($group_category == '0'){
+    if($medicineUnit == ''){
         $status = false;
-        $('#group_category').removeClass('is-valid');
-        $('#group_category').addClass('is-invalid');
+        $('#medicineUnit').removeClass('is-valid');
+        $('#medicineUnit').addClass('is-invalid');
     }else{
         $status = true;
-        $('#group_category').removeClass('is-invalid');
-        $('#group_category').addClass('is-valid');
+        $('#medicineUnit').removeClass('is-invalid');
+        $('#medicineUnit').addClass('is-valid');
     }
 
-    if($group_sub_category == '0'){
+    if($morning_yn == '0'){
         $status = false;
-        $('#group_sub_category').removeClass('is-valid');
-        $('#group_sub_category').addClass('is-invalid');
+        $('#morning_yn').removeClass('is-valid');
+        $('#morning_yn').addClass('is-invalid');
     }else{
         $status = true;
-        $('#group_sub_category').removeClass('is-invalid');
-        $('#group_sub_category').addClass('is-valid');
-    }    
+        $('#morning_yn').removeClass('is-invalid');
+        $('#morning_yn').addClass('is-valid');
+    }
 
-    $('#submitForm_spinner').hide();
-    $('#submitForm_spinner_text').hide();
-    $('#submitForm_text').show();
+    if($afternoon_yn == '0'){
+        $status = false;
+        $('#afternoon_yn').removeClass('is-valid');
+        $('#afternoon_yn').addClass('is-invalid');
+    }else{
+        $status = true;
+        $('#afternoon_yn').removeClass('is-invalid');
+        $('#afternoon_yn').addClass('is-valid');
+    } 
+
+    if($evening_yn == '0'){
+        $status = false;
+        $('#evening_yn').removeClass('is-valid');
+        $('#evening_yn').addClass('is-invalid');
+    }else{
+        $status = true;
+        $('#evening_yn').removeClass('is-invalid');
+        $('#evening_yn').addClass('is-valid');
+    } 
+
+    if($night_yn == '0'){
+        $status = false;
+        $('#night_yn').removeClass('is-valid');
+        $('#night_yn').addClass('is-invalid');
+    }else{
+        $status = true;
+        $('#night_yn').removeClass('is-invalid');
+        $('#night_yn').addClass('is-valid');
+    } 
+
+    if($days == ''){
+        $status = false;
+        $('#days').removeClass('is-valid');
+        $('#days').addClass('is-invalid');
+    }else{
+        $status = true;
+        $('#days').removeClass('is-invalid');
+        $('#days').addClass('is-valid');
+    }       
+
+    $('#submitForm1_spinner').hide();
+    $('#submitForm1_spinner_text').hide();
+    $('#submitForm1_text').show();
 
     return $status;
 }//en validate form
 
-function clearForm(){
-    $('#group_category').val('');
-    $('#group_category').removeClass('is-valid');
-    $('#group_category').removeClass('is-invalid');
+function clearMedicineForm(){
+    $('#medicine').val('0').trigger('change');
 
-    $('#group_sub_category').val('');
-    $('#group_sub_category').removeClass('is-valid');
-    $('#group_sub_category').removeClass('is-invalid');
-    $('#service_id').val('0');
+    $('#medicineUnit').val('');
+    $('#medicineUnit').removeClass('is-valid');
+    $('#medicineUnit').removeClass('is-invalid');
 
+    $('#morning_yn').val('0').trigger('change');
+    $('#morning_yn').removeClass('is-valid');
+    $('#morning_yn').removeClass('is-invalid');
+
+    $('#afternoon_yn').val('0').trigger('change');
+    $('#afternoon_yn').removeClass('is-valid');
+    $('#afternoon_yn').removeClass('is-invalid');
+
+    $('#evening_yn').val('0').trigger('change');
+    $('#evening_yn').removeClass('is-valid');
+    $('#evening_yn').removeClass('is-invalid');
+
+    $('#night_yn').val('0').trigger('change');
+    $('#night_yn').removeClass('is-valid');
+    $('#night_yn').removeClass('is-invalid');
+
+    $('#specialCondition').val('');
+    $('#specialCondition').removeClass('is-valid');
+    $('#specialCondition').removeClass('is-invalid');
+
+    $('#days').val('');
+    $('#days').removeClass('is-valid');
+    $('#days').removeClass('is-invalid'); 
 }//end 
 
-/*$(".form-control").blur(function(){
-    $('#orgFormAlert').css("display", "none");
-    $formVallidStatus = validateForm();
-});*/
-
-
-
-$('#submitForm').click(function(){
-    $('#submitForm_spinner').show();
-    $('#submitForm_spinner_text').show();
-    $('#submitForm_text').hide();
+$('#submitMedicineAdd').click(function(){
+    $('#submitForm1_spinner').show();
+    $('#submitForm1_spinner_text').show();
+    $('#submitForm1_text').hide();
     setTimeout(function(){
-        $formVallidStatus = validateForm();
+        $formVallidStatus = validateMedicineForm();
 
         if($formVallidStatus == true){
-            populateDataTable($group_sub_category)
-        }
+            clearMedicineForm()
+            $('#medicineModal').modal('hide');
+            $action_del = "<a href='javascript: void(0)' class='delete_name' data-row_slno='"+$slno+"'><i class='fa fa-trash' aria-hidden='true'></i></a>";
 
+            var t = $('#exampleMedi').DataTable();
+            t.row.add([$slno, $medicine_name, $medicineUnit, $morning_yn_text, $afternoon_yn_text, $evening_yn_text, $night_yn_text, $specialCondition, $days, $action_del]).draw(false); 
+           
+            $slno++;
+            $('#slno').val($slno);  
+            
+        }
     }, 500)    
 })
 
-//Delete function	
-//function deleteService($service_id){
-$('#example').on('click', '.delete_name', function(){
-    if (confirm('Are you sure to delete the Name?')) {
-        $gm_id = $(this).data('gm_id');
+//Major Compliants
+function validateMajorCompForm(){
+    $duration = $('#duration').val().replace(/^\s+|\s+$/gm,'');
+    $slnoMc = $('#slnoMc').val();
+    
+    $status = true;
+
+    if($duration == ''){
+        $status = false;
+        $('#duration').removeClass('is-valid');
+        $('#duration').addClass('is-invalid');
+    }else{
+        $status = true;
+        $('#duration').removeClass('is-invalid');
+        $('#duration').addClass('is-valid');
+    }      
+
+    $('#submitForm2_spinner').hide();
+    $('#submitForm2_spinner_text').hide();
+    $('#submitForm2_text').show();
+
+    return $status;
+}//en validate form
+
+function clearMajorCompForm(){
+    $('#majorComplaints').val('0').trigger('change');
+
+    $('#duration').val('');
+    $('#duration').removeClass('is-valid');
+    $('#duration').removeClass('is-invalid');
+}//end fun
+
+$('#submitComplianceAdd').click(function(){
+    $('#submitForm2_spinner').show();
+    $('#submitForm2_spinner_text').show();
+    $('#submitForm2_text').hide();
+
+    setTimeout(function(){
+        $majorCompFormVallidStatus = validateMajorCompForm();
+
+        if($majorCompFormVallidStatus == true){
+            clearMajorCompForm()
+            $('#majorCompliModal').modal('hide');
+
+            $action_del = "<a href='javascript: void(0)' class='delete_name' data-row_slno='"+$slnoMc+"'><i class='fa fa-trash' aria-hidden='true'></i></a>";
+
+            var t = $('#majorCompliTable').DataTable();
+            t.row.add([$slnoMc, $majorComplaintsName, $duration, $action_del]).draw(false); 
+           
+            $slnoMc++;
+            $('#slnoMc').val($slnoMc);              
+        }
+    }, 500)    
+})
+
+//Delete function Major compliants table
+$('#majorCompliTable').on('click', '.delete_name', function(){
+    if (confirm('Are you sure to delete the Row?')) {
+        var table = $('#majorCompliTable').DataTable();
+
+        table
+        .row( $(this).parents('tr') )
+        .remove()
+        .draw();
+        
+
+        /*$gm_id = $(this).data('gm_id');
         $group_sub_category = $('#group_sub_category').val().replace(/^\s+|\s+$/gm,'');
         $('#orgTableAlert').css("display", "none");
         $('#orgTableAlert1').css("display", "none");
@@ -278,10 +438,41 @@ $('#example').on('click', '.delete_name', function(){
                 $('#orgTableAlert').show();
                 populateDataTable($group_sub_category);
             }
-        });//end ajax
+        });*/ //end ajax
     }		
 }) 
-//}//end delete
+
+//Delete function Medicine table
+$('#exampleMedi').on('click', '.delete_name', function(){
+    if (confirm('Are you sure to delete the Row?')) {
+        var table = $('#exampleMedi').DataTable();
+
+        table
+        .row( $(this).parents('tr') )
+        .remove()
+        .draw();
+        
+
+        /*$gm_id = $(this).data('gm_id');
+        $group_sub_category = $('#group_sub_category').val().replace(/^\s+|\s+$/gm,'');
+        $('#orgTableAlert').css("display", "none");
+        $('#orgTableAlert1').css("display", "none");
+
+        $.ajax({
+            method: "POST",
+            url: "patient_management/investigation/function.php",
+            data: { fn: "deleteName", gm_id: $gm_id }
+        })
+        .done(function( res ) {
+            //console.log(res);
+            $res1 = JSON.parse(res);
+            if($res1.status == true){
+                $('#orgTableAlert').show();
+                populateDataTable($group_sub_category);
+            }
+        });*/ //end ajax
+    }		
+}) 
 
 
 function populateDataTable($gc_id){

@@ -89,6 +89,7 @@
                                         <th>Sl.No.</th>
                                         <th>Code</th>
                                         <th>Centre Name</th>
+                                        <th>Consultation Fee</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -97,6 +98,7 @@
                                         <th>Sl.No.</th>
                                         <th>Code</th>
                                         <th>Centre Name</th>
+                                        <th>Consultation Fee</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>
@@ -137,6 +139,17 @@
                                         </div>                                    
                                         <div class="invalid-feedback">
                                             Please provide Centre Name.
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-12 mb-3">
+                                        <label for="serviceDescription">Consultation Fee*</label>
+                                        <input type="text" class="form-control" id="serviceDescription" placeholder="Consultation Fee" value="" required> 
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>                                    
+                                        <div class="invalid-feedback">
+                                            Please provide Consultation Fee.
                                         </div>
                                     </div> 
 

@@ -20,7 +20,7 @@
 					<li class="nav-item pcoded-hasmenu <?php if($p == 'online_appointment' || $p == 'new_patient_registration' || $p == 'investigation' || $p == 'upload_documents' || $p == 'search_patient' || $p == 'reminder_sms' || $p == 'reply_queries_chat'){ ?> active pcoded-trigger <?php } ?>">
 						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Patient Management</span></a>
 						<ul class="pcoded-submenu">
-							<li <?php if($p == 'online_appointment'){ ?> class="active" <?php } ?>><a href="?p=online_appointment&gr=p_mgt">Online Appointment</a></li>
+							<li <?php if($p == 'online_appointment'){ ?> class="active" <?php } ?>><a href="https://drpallabsaha.com/contact/" target="blank">Online Appointment</a></li>
 							<li <?php if($p == 'new_patient_registration'){ ?> class="active" <?php } ?>><a href="?p=new_patient_registration&gr=p_mgt">New Patient Registration</a></li>
 							<li <?php if($p == 'investigation'){ ?> class="active" <?php } ?>><a href="?p=investigation&gr=p_mgt">Investigation</a></li>
 							<li <?php if($p == 'upload_documents'){ ?> class="active" <?php } ?>><a href="?p=upload_documents&gr=p_mgt">Upload Documents</a></li>
