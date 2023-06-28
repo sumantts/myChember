@@ -384,9 +384,6 @@
                                 </div>
                             </form>
 
-                            
-
-
                             <div class="table-responsive">
                                 <table id="majorCompliTable" class="table table-striped" style="width:100%">
                                     <thead>
@@ -403,6 +400,104 @@
                                             <th>Sl.No.</th>
                                             <th>Complaints</th>
                                             <th>Duration</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>                
+                </div>
+                <!-- [ sample-page ] end -->
+                
+                <!-- [ sample-page Surgical History ] start -->
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header" id="toggleBtn12">
+                            <h5>Surgical History</h5>
+                            <div class="card-header-right">
+                                <div class="btn-group card-option">
+                                    <button type="button" class="btn dropdown-toggle btn-icon" aria-haspopup="true" aria-expanded="false">
+                                        <i class="feather icon-more-horizontal"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body" id="toggleBody12">
+                            <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;" id="orgFormAlert">
+                                <strong>Success!</strong> Your Data saved successfully.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+
+                            <button type="button" class="btn btn-primary mb-2 float-right" id="addNewSurgery">Add New</button>
+
+                            <div class="table-responsive">
+                                <table id="surgeryTable" class="table table-striped" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Sl.No.</th>
+                                            <th>Surgery Name</th>
+                                            <th>Date</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tfoot>
+                                        <tr>
+                                            <th>Sl.No.</th>
+                                            <th>Surgery Name</th>
+                                            <th>Date</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>                
+                </div>
+                <!-- [ sample-page ] end -->
+                
+                <!-- [ sample-page Medicine Going On ] start -->
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header" id="toggleBtn13">
+                            <h5>Medicine Going On</h5>
+                            <div class="card-header-right">
+                                <div class="btn-group card-option">
+                                    <button type="button" class="btn dropdown-toggle btn-icon" aria-haspopup="true" aria-expanded="false">
+                                        <i class="feather icon-more-horizontal"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body" id="toggleBody13">
+                            <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;" id="orgFormAlert">
+                                <strong>Success!</strong> Your Data saved successfully.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+
+                            <button type="button" class="btn btn-primary mb-2 float-right" id="addonGoingMedicine">Add New</button>
+
+                            <div class="table-responsive">
+                                <table id="onGoingMedicineTable" class="table table-striped" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Sl.No.</th>
+                                            <th>Medicine Name</th>
+                                            <th>Note</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tfoot>
+                                        <tr>
+                                            <th>Sl.No.</th>
+                                            <th>Medicine Name</th>
+                                            <th>Note</th>
                                             <th>Action</th>
                                         </tr>
                                     </tfoot>
@@ -637,7 +732,7 @@
                                 <div class="form-row">
                                     <div class="col-md-9 mb-3">
                                         <label for="procedures">Procedures</label>
-                                        <select class="mb-3 form-control" id="procedures" multiple>
+                                        <select class="mb-3 form-control" id="procedures">
                                             <option value="0">Select Procedures</option>
                                         </select>
                                         <div class="valid-feedback">
@@ -657,6 +752,29 @@
                                     </div>                                    
                                 </div>
                             </form>
+
+                            <div class="table-responsive">
+                                <table id="proceduresTable" class="table table-striped" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Sl.No.</th>
+                                            <th>Procedures</th>
+                                            <th>Scheduled</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tfoot>
+                                        <tr>
+                                            <th>Sl.No.</th>
+                                            <th>Procedures</th>
+                                            <th>Scheduled</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+
                         </div>
                     </div>                
                 </div>
@@ -848,6 +966,142 @@
 
 
                 <!-- [ sample-table ] start -->
+
+                <!-- Medicine Going On Modal start -->
+                <div id="onGoingMedicineModal" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="onGoingMedicineModalTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="onGoingMedicineModalTitle">Medicine Going On</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="needs-validation" novalidate>
+                                    <div class="form-row">
+                                        <div class="col-md-12 mb-2">
+                                            <label for="medicineName">Medicine Name</label>
+                                            <input type="text" class="form-control" id="medicineName" value="" required >
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>                                    
+                                            <div class="invalid-feedback">
+                                                Please Provide Medicine Name.
+                                            </div>  
+                                        </div> 
+
+                                        <div class="col-md-12 mb-2">
+                                            <label for="mediNote">Note</label>
+                                            <input type="text" class="form-control" id="mediNote" value="" required >
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>                                    
+                                            <div class="invalid-feedback">
+                                                Please Provide Surgery Date.
+                                            </div>  
+                                        </div> 
+                                    </div>
+                                </form>   
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button class="btn  btn-primary" type="button" id="onGoingMediAdd">
+                                    <span class="spinner-border spinner-border-sm" role="status" style="display: none;" id="submitForm5_spinner"></span>
+                                    <span class="load-text" style="display: none;" id="submitForm5_spinner_text">Loading...</span>
+                                    <span class="btn-text" id="submitForm5_text">Add</span>
+                                    <input type="hidden" name="slnoMed" id="slnoMed" value="1">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Medicine Going On Modal end -->
+
+                <!-- Surgical History Modal start -->
+                <div id="surgicalHistoryModal" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="surgicalHistoryModalTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="surgicalHistoryModalTitle">Surgical History</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="needs-validation" novalidate>
+                                    <div class="form-row">
+                                        <div class="col-md-12 mb-2">
+                                            <label for="surgeryName">Surgery Name</label>
+                                            <input type="text" class="form-control" id="surgeryName" value="" required >
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>                                    
+                                            <div class="invalid-feedback">
+                                                Please Provide Surgery Name.
+                                            </div>  
+                                        </div> 
+
+                                        <div class="col-md-12 mb-2">
+                                            <label for="surgeryDate">Date</label>
+                                            <input type="date" class="form-control" id="surgeryDate" value="" required >
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>                                    
+                                            <div class="invalid-feedback">
+                                                Please Provide Surgery Date.
+                                            </div>  
+                                        </div> 
+                                    </div>
+                                </form>   
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button class="btn  btn-primary" type="button" id="submitSurgeyAdd">
+                                    <span class="spinner-border spinner-border-sm" role="status" style="display: none;" id="submitForm4_spinner"></span>
+                                    <span class="load-text" style="display: none;" id="submitForm4_spinner_text">Loading...</span>
+                                    <span class="btn-text" id="submitForm4_text">Add</span>
+                                    <input type="hidden" name="slnoSh" id="slnoSh" value="1">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Surgical History Modal end -->
+
+                <!-- Procedures Modal start -->
+                <div id="proceduresModal" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="proceduresModalTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="proceduresModalTitle">Scheduled</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="needs-validation" novalidate>
+                                    <div class="form-row">
+                                        <div class="col-md-12 mb-2">
+                                            <label for="scheduled">Scheduled</label>
+                                            <input type="date" class="form-control" id="scheduled" value="" required >
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>                                    
+                                            <div class="invalid-feedback">
+                                                Please Provide Scheduled.
+                                            </div>  
+                                        </div> 
+                                    </div>
+                                </form>   
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button class="btn  btn-primary" type="button" id="submitProceduresAdd">
+                                    <span class="spinner-border spinner-border-sm" role="status" style="display: none;" id="submitForm3_spinner"></span>
+                                    <span class="load-text" style="display: none;" id="submitForm3_spinner_text">Loading...</span>
+                                    <span class="btn-text" id="submitForm3_text">Add</span>
+                                    <input type="hidden" name="slnoProc" id="slnoProc" value="1">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Procedures Modal end -->
 
                 <!-- Major compliance Modal start -->
                 <div id="majorCompliModal" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="majorCompliModalTitle" aria-hidden="true">

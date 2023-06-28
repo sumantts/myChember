@@ -15,6 +15,8 @@ $(document).ready(function() {
     $('#toggleBody9').slideToggle(100);
     $('#toggleBody10').slideToggle(100);
     $('#toggleBody11').slideToggle(100);
+    $('#toggleBody12').slideToggle(100);
+    $('#toggleBody13').slideToggle(100);
 });
 
 $('#toggleBtn1').on('click', function(){
@@ -61,6 +63,14 @@ $('#toggleBtn11').on('click', function(){
     $('#toggleBody11').slideToggle(300);
 })
 
+$('#toggleBtn12').on('click', function(){
+    $('#toggleBody12').slideToggle(300);
+})
+
+$('#toggleBtn13').on('click', function(){
+    $('#toggleBody13').slideToggle(300);
+})
+
 $('#medicine').on('change', function(){
     $medicine = $('#medicine').val();
     if($medicine > 0){
@@ -78,6 +88,23 @@ $('#majorComplaints').on('change', function(){
         $('#majorCompliModal').modal('show');
     }
 });
+
+$('#procedures').on('change', function(){
+    $procedures = $('#procedures').val();
+    if($procedures > 0){
+        $proceduresName = $('#procedures option:selected').text();
+        $('#proceduresModalTitle').html($proceduresName);
+        $('#proceduresModal').modal('show');
+    }
+});
+
+$('#addNewSurgery').on('click', function(){
+    $('#surgicalHistoryModal').modal('show');
+})
+
+$('#addonGoingMedicine').on('click', function(){
+    $('#onGoingMedicineModal').modal('show');
+})
 
 function configureAllDropDown(){
     $.ajax({
@@ -119,6 +146,7 @@ function configureAllDropDown(){
                 $('#medicine').html('');
                 $option_string_me = "<option value='0'>Select Medicine</option>";
                 $option_string_mc = "<option value='0'>Select Major Complaints</option>";
+                $option_string_pr = "<option value='0'>Select Major Procedures</option>";
 
                 for($i = 0; $i < $rows.length; $i++){
                     //4. Drug Allergy
@@ -215,6 +243,7 @@ $(".form-control").blur(function(){
     $('#orgFormAlert').css("display", "none");
     $formVallidStatus = validateMedicineForm();
     $majorCompFormVallidStatus = validateMajorCompForm();
+    $proceduresFormVallidStatus = validateProceduresForm();
 });
 
 //Medicine
@@ -355,7 +384,39 @@ $('#submitMedicineAdd').click(function(){
     }, 500)    
 })
 
-//Major Compliants
+//Delete function Medicine table
+$('#exampleMedi').on('click', '.delete_name', function(){
+    if (confirm('Are you sure to delete the Row?')) {
+        var table = $('#exampleMedi').DataTable();
+
+        table
+        .row( $(this).parents('tr') )
+        .remove()
+        .draw();
+        
+
+        /*$gm_id = $(this).data('gm_id');
+        $group_sub_category = $('#group_sub_category').val().replace(/^\s+|\s+$/gm,'');
+        $('#orgTableAlert').css("display", "none");
+        $('#orgTableAlert1').css("display", "none");
+
+        $.ajax({
+            method: "POST",
+            url: "patient_management/investigation/function.php",
+            data: { fn: "deleteName", gm_id: $gm_id }
+        })
+        .done(function( res ) {
+            //console.log(res);
+            $res1 = JSON.parse(res);
+            if($res1.status == true){
+                $('#orgTableAlert').show();
+                populateDataTable($group_sub_category);
+            }
+        });*/ //end ajax
+    }		
+}) 
+
+//Major Compliants start
 function validateMajorCompForm(){
     $duration = $('#duration').val().replace(/^\s+|\s+$/gm,'');
     $slnoMc = $('#slnoMc').val();
@@ -441,11 +502,67 @@ $('#majorCompliTable').on('click', '.delete_name', function(){
         });*/ //end ajax
     }		
 }) 
+//End Major Compliants
 
-//Delete function Medicine table
-$('#exampleMedi').on('click', '.delete_name', function(){
+//Procedures Start
+function validateProceduresForm(){
+    $scheduled = $('#scheduled').val().replace(/^\s+|\s+$/gm,'');
+    $slnoProc = $('#slnoProc').val();
+    
+    $status = true;
+
+    if($scheduled == ''){
+        $status = false;
+        $('#scheduled').removeClass('is-valid');
+        $('#scheduled').addClass('is-invalid');
+    }else{
+        $status = true;
+        $('#scheduled').removeClass('is-invalid');
+        $('#scheduled').addClass('is-valid');
+    }      
+
+    $('#submitForm3_spinner').hide();
+    $('#submitForm3_spinner_text').hide();
+    $('#submitForm3_text').show();
+
+    return $status;
+}//en validate form
+
+function clearProceduresForm(){
+    $('#procedures').val('0').trigger('change');
+
+    $('#scheduled').val('');
+    $('#scheduled').removeClass('is-valid');
+    $('#scheduled').removeClass('is-invalid');
+}//end fun
+
+$('#submitProceduresAdd').click(function(){
+    $('#submitForm3_spinner').show();
+    $('#submitForm3_spinner_text').show();
+    $('#submitForm3_text').hide();
+
+    setTimeout(function(){
+        $proceduresFormVallidStatus = validateProceduresForm();
+
+        if($proceduresFormVallidStatus == true){
+            clearProceduresForm()
+            $('#proceduresModal').modal('hide');
+
+            $action_del = "<a href='javascript: void(0)' class='delete_name' data-row_slno='"+$slnoMc+"'><i class='fa fa-trash' aria-hidden='true'></i></a>";
+
+            var t = $('#proceduresTable').DataTable();
+            t.row.add([$slnoProc, $proceduresName, $scheduled, $action_del]).draw(false); 
+           
+            $slnoProc++;
+            $('#slnoProc').val($slnoProc);              
+        }
+    }, 500)    
+})
+
+//Delete 
+$('#proceduresTable').on('click', '.delete_name', function(){
     if (confirm('Are you sure to delete the Row?')) {
-        var table = $('#exampleMedi').DataTable();
+        var table = $('#proceduresTable').DataTable();
 
         table
         .row( $(this).parents('tr') )
@@ -473,6 +590,201 @@ $('#exampleMedi').on('click', '.delete_name', function(){
         });*/ //end ajax
     }		
 }) 
+//End Procedures
+
+//Surgical History Start
+function validateSurgeryForm(){
+    $surgeryName = $('#surgeryName').val().replace(/^\s+|\s+$/gm,'');
+    $surgeryDate = $('#surgeryDate').val().replace(/^\s+|\s+$/gm,'');
+    $slnoSh = $('#slnoSh').val();
+    
+    $status = true;
+
+    if($surgeryName == ''){
+        $status = false;
+        $('#surgeryName').removeClass('is-valid');
+        $('#surgeryName').addClass('is-invalid');
+    }else{
+        $status = true;
+        $('#surgeryName').removeClass('is-invalid');
+        $('#surgeryName').addClass('is-valid');
+    }  
+
+    if($surgeryDate == ''){
+        $status = false;
+        $('#surgeryDate').removeClass('is-valid');
+        $('#surgeryDate').addClass('is-invalid');
+    }else{
+        $status = true;
+        $('#surgeryDate').removeClass('is-invalid');
+        $('#surgeryDate').addClass('is-valid');
+    }      
+
+    $('#submitForm4_spinner').hide();
+    $('#submitForm4_spinner_text').hide();
+    $('#submitForm4_text').show();
+
+    return $status;
+}//en validate form
+
+function clearSurgeryForm(){
+    $('#surgeryName').val('');
+    $('#surgeryName').removeClass('is-valid');
+    $('#surgeryName').removeClass('is-invalid');
+
+    $('#surgeryDate').val('');
+    $('#surgeryDate').removeClass('is-valid');
+    $('#surgeryDate').removeClass('is-invalid');
+}//end fun
+
+$('#submitSurgeyAdd').click(function(){
+    $('#submitForm4_spinner').show();
+    $('#submitForm4_spinner_text').show();
+    $('#submitForm4_text').hide();
+
+    setTimeout(function(){
+        $surgeryFormVallidStatus = validateSurgeryForm();
+
+        if($surgeryFormVallidStatus == true){
+            clearSurgeryForm()
+            $('#surgicalHistoryModal').modal('hide');
+
+            $action_del = "<a href='javascript: void(0)' class='delete_name' data-row_slno='"+$slnoMc+"'><i class='fa fa-trash' aria-hidden='true'></i></a>";
+
+            var t = $('#surgeryTable').DataTable();
+            t.row.add([$slnoSh, $surgeryName, $surgeryDate, $action_del]).draw(false); 
+           
+            $slnoSh++;
+            $('#slnoSh').val($slnoSh);              
+        }
+    }, 500)    
+})
+
+//Delete 
+$('#surgeryTable').on('click', '.delete_name', function(){
+    if (confirm('Are you sure to delete the Row?')) {
+
+        var table = $('#surgeryTable').DataTable();
+
+        table
+        .row( $(this).parents('tr') )
+        .remove()
+        .draw();
+        
+
+        /*$gm_id = $(this).data('gm_id');
+        $group_sub_category = $('#group_sub_category').val().replace(/^\s+|\s+$/gm,'');
+        $('#orgTableAlert').css("display", "none");
+        $('#orgTableAlert1').css("display", "none");
+
+        $.ajax({
+            method: "POST",
+            url: "patient_management/investigation/function.php",
+            data: { fn: "deleteName", gm_id: $gm_id }
+        })
+        .done(function( res ) {
+            //console.log(res);
+            $res1 = JSON.parse(res);
+            if($res1.status == true){
+                $('#orgTableAlert').show();
+                populateDataTable($group_sub_category);
+            }
+        });*/ //end ajax
+    }		
+}) 
+//End Surgical History
+
+//Medicine Going On Start
+function validateOnGoMediForm(){
+    $medicineName = $('#medicineName').val().replace(/^\s+|\s+$/gm,'');
+    $mediNote = $('#mediNote').val().replace(/^\s+|\s+$/gm,'');
+    $slnoMed = $('#slnoMed').val();
+    
+    $status = true;
+
+    if($medicineName == ''){
+        $status = false;
+        $('#medicineName').removeClass('is-valid');
+        $('#medicineName').addClass('is-invalid');
+    }else{
+        $status = true;
+        $('#medicineName').removeClass('is-invalid');
+        $('#medicineName').addClass('is-valid');
+    }       
+
+    $('#submitForm5_spinner').hide();
+    $('#submitForm5_spinner_text').hide();
+    $('#submitForm5_text').show();
+
+    return $status;
+}//en validate form
+
+function clearOnGoMediForm(){
+    $('#medicineName').val('');
+    $('#medicineName').removeClass('is-valid');
+    $('#medicineName').removeClass('is-invalid');
+
+    $('#mediNote').val('');
+    $('#mediNote').removeClass('is-valid');
+    $('#mediNote').removeClass('is-invalid');
+}//end fun
+
+$('#onGoingMediAdd').click(function(){
+    $('#submitForm5_spinner').show();
+    $('#submitForm5_spinner_text').show();
+    $('#submitForm5_text').hide();
+
+    setTimeout(function(){
+        $onGoMediFormVallidStatus = validateOnGoMediForm();
+
+        if($onGoMediFormVallidStatus == true){
+            clearOnGoMediForm()
+            $('#onGoingMedicineModal').modal('hide');
+
+            $action_del = "<a href='javascript: void(0)' class='delete_name' data-row_slno='"+$slnoMc+"'><i class='fa fa-trash' aria-hidden='true'></i></a>";
+
+            var t = $('#onGoingMedicineTable').DataTable();
+            t.row.add([$slnoMed, $medicineName, $mediNote, $action_del]).draw(false); 
+           
+            $slnoMed++;
+            $('#slnoMed').val($slnoMed);              
+        }
+    }, 500)    
+})
+
+//Delete 
+$('#onGoingMedicineTable').on('click', '.delete_name', function(){
+    if (confirm('Are you sure to delete the Row?')) {
+
+        var table = $('#onGoingMedicineTable').DataTable();
+
+        table
+        .row( $(this).parents('tr') )
+        .remove()
+        .draw();
+        
+
+        /*$gm_id = $(this).data('gm_id');
+        $group_sub_category = $('#group_sub_category').val().replace(/^\s+|\s+$/gm,'');
+        $('#orgTableAlert').css("display", "none");
+        $('#orgTableAlert1').css("display", "none");
+
+        $.ajax({
+            method: "POST",
+            url: "patient_management/investigation/function.php",
+            data: { fn: "deleteName", gm_id: $gm_id }
+        })
+        .done(function( res ) {
+            //console.log(res);
+            $res1 = JSON.parse(res);
+            if($res1.status == true){
+                $('#orgTableAlert').show();
+                populateDataTable($group_sub_category);
+            }
+        });*/ //end ajax
+    }		
+}) 
+//End Medicine Going On
 
 
 function populateDataTable($gc_id){
