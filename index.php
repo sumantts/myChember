@@ -66,6 +66,12 @@
 			$title = "Group Master";
 			include('master/group_master/group_master.php');		
 		break;
+
+		//OT Management		
+		case 'ot_scheduling':
+			$title = "OT Scheduling";
+			include('ot_mgt/ot_scheduling/ot_scheduling.php');		
+		break;
 						
 		default:
 		include('signin/signin.php');
