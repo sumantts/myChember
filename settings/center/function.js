@@ -1,3 +1,6 @@
+$('#multiCenterAdd').on('click', function(){
+    $('#multiCenterModal').modal('show');
+})
 
 function validateForm(){
     $serviceName = $('#serviceName').val().replace(/^\s+|\s+$/gm,'');

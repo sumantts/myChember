@@ -1,3 +1,6 @@
+$('#newPatientAdd').on('click', function(){
+    $('#newPatientModal').modal('show');
+})
 
 function validateForm(){
     $Parameter = $('#Parameter').val().replace(/^\s+|\s+$/gm,'');

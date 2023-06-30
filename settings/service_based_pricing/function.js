@@ -1,3 +1,6 @@
+$('#servicePriceAdd').on('click', function(){
+    $('#servicePriceModal').modal('show');
+})
 
 function validateForm(){
     $Parameter = $('#Parameter').val().replace(/^\s+|\s+$/gm,'');

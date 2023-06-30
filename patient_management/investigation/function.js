@@ -17,6 +17,8 @@ $(document).ready(function() {
     $('#toggleBody11').slideToggle(100);
     $('#toggleBody12').slideToggle(100);
     $('#toggleBody13').slideToggle(100);
+    $('#toggleBody14').slideToggle(100);
+    $('#toggleBody15').slideToggle(100);
 });
 
 $('#toggleBtn1').on('click', function(){
@@ -71,6 +73,14 @@ $('#toggleBtn13').on('click', function(){
     $('#toggleBody13').slideToggle(300);
 })
 
+$('#toggleBtn14').on('click', function(){
+    $('#toggleBody14').slideToggle(300);
+})
+
+$('#toggleBtn15').on('click', function(){
+    $('#toggleBody15').slideToggle(300);
+})
+
 $('#medicine').on('change', function(){
     $medicine = $('#medicine').val();
     if($medicine > 0){
@@ -104,6 +114,14 @@ $('#addNewSurgery').on('click', function(){
 
 $('#addonGoingMedicine').on('click', function(){
     $('#onGoingMedicineModal').modal('show');
+})
+
+$('#addImmunizationHistory').on('click', function(){
+    $('#immunizationHistoryModal').modal('show');
+})
+
+$('#addFamilyHistory').on('click', function(){
+    $('#familyHistoryModal').modal('show');
 })
 
 function configureAllDropDown(){
@@ -548,7 +566,7 @@ $('#submitProceduresAdd').click(function(){
             clearProceduresForm()
             $('#proceduresModal').modal('hide');
 
-            $action_del = "<a href='javascript: void(0)' class='delete_name' data-row_slno='"+$slnoMc+"'><i class='fa fa-trash' aria-hidden='true'></i></a>";
+            $action_del = "<a href='javascript: void(0)' class='delete_name' data-row_slno='"+$slnoProc+"'><i class='fa fa-trash' aria-hidden='true'></i></a>";
 
             var t = $('#proceduresTable').DataTable();
             t.row.add([$slnoProc, $proceduresName, $scheduled, $action_del]).draw(false); 
@@ -649,7 +667,7 @@ $('#submitSurgeyAdd').click(function(){
             clearSurgeryForm()
             $('#surgicalHistoryModal').modal('hide');
 
-            $action_del = "<a href='javascript: void(0)' class='delete_name' data-row_slno='"+$slnoMc+"'><i class='fa fa-trash' aria-hidden='true'></i></a>";
+            $action_del = "<a href='javascript: void(0)' class='delete_name' data-row_slno='"+$slnoSh+"'><i class='fa fa-trash' aria-hidden='true'></i></a>";
 
             var t = $('#surgeryTable').DataTable();
             t.row.add([$slnoSh, $surgeryName, $surgeryDate, $action_del]).draw(false); 
@@ -741,7 +759,7 @@ $('#onGoingMediAdd').click(function(){
             clearOnGoMediForm()
             $('#onGoingMedicineModal').modal('hide');
 
-            $action_del = "<a href='javascript: void(0)' class='delete_name' data-row_slno='"+$slnoMc+"'><i class='fa fa-trash' aria-hidden='true'></i></a>";
+            $action_del = "<a href='javascript: void(0)' class='delete_name' data-row_slno='"+$slnoMed+"'><i class='fa fa-trash' aria-hidden='true'></i></a>";
 
             var t = $('#onGoingMedicineTable').DataTable();
             t.row.add([$slnoMed, $medicineName, $mediNote, $action_del]).draw(false); 
@@ -785,6 +803,185 @@ $('#onGoingMedicineTable').on('click', '.delete_name', function(){
     }		
 }) 
 //End Medicine Going On
+
+//Immunization History Start
+function validateImmuHistoryForm(){
+    $immunizationName = $('#immunizationName').val().replace(/^\s+|\s+$/gm,'');
+    $immunizationNote = $('#immunizationNote').val().replace(/^\s+|\s+$/gm,'');
+    $slnoImu = $('#slnoImu').val();
+    
+    $status = true;
+
+    if($immunizationName == ''){
+        $status = false;
+        $('#immunizationName').removeClass('is-valid');
+        $('#immunizationName').addClass('is-invalid');
+    }else{
+        $status = true;
+        $('#immunizationName').removeClass('is-invalid');
+        $('#immunizationName').addClass('is-valid');
+    }       
+
+    $('#submitForm6_spinner').hide();
+    $('#submitForm6_spinner_text').hide();
+    $('#submitForm6_text').show();
+
+    return $status;
+}//en validate form
+
+function clearImmuHistForm(){
+    $('#immunizationName').val('');
+    $('#immunizationName').removeClass('is-valid');
+    $('#immunizationName').removeClass('is-invalid');
+
+    $('#immunizationNote').val('');
+    $('#immunizationNote').removeClass('is-valid');
+    $('#immunizationNote').removeClass('is-invalid');
+}//end fun
+
+$('#immunizationAdd').click(function(){
+    $('#submitForm6_spinner').show();
+    $('#submitForm6_spinner_text').show();
+    $('#submitForm6_text').hide();
+
+    setTimeout(function(){
+        $immuHistFormVallidStatus = validateImmuHistoryForm();
+
+        if($immuHistFormVallidStatus == true){
+            clearImmuHistForm()
+            $('#immunizationHistoryModal').modal('hide');
+
+            $action_del = "<a href='javascript: void(0)' class='delete_name' data-row_slno='"+$slnoImu+"'><i class='fa fa-trash' aria-hidden='true'></i></a>";
+
+            var t = $('#immunizationHistoryTable').DataTable();
+            t.row.add([$slnoImu, $immunizationName, $immunizationNote, $action_del]).draw(false); 
+           
+            $slnoImu++;
+            $('#slnoImu').val($slnoImu);              
+        }
+    }, 500)    
+})
+
+//Delete 
+$('#immunizationHistoryTable').on('click', '.delete_name', function(){
+    if (confirm('Are you sure to delete the Row?')) {
+
+        var table = $('#immunizationHistoryTable').DataTable();
+
+        table
+        .row( $(this).parents('tr') )
+        .remove()
+        .draw();
+        
+
+        /*$gm_id = $(this).data('gm_id');
+        $group_sub_category = $('#group_sub_category').val().replace(/^\s+|\s+$/gm,'');
+        $('#orgTableAlert').css("display", "none");
+        $('#orgTableAlert1').css("display", "none");
+
+        $.ajax({
+            method: "POST",
+            url: "patient_management/investigation/function.php",
+            data: { fn: "deleteName", gm_id: $gm_id }
+        })
+        .done(function( res ) {
+            //console.log(res);
+            $res1 = JSON.parse(res);
+            if($res1.status == true){
+                $('#orgTableAlert').show();
+                populateDataTable($group_sub_category);
+            }
+        });*/ //end ajax
+    }		
+}) 
+//End Immunization History
+
+//Personal/Family History Start
+function validateFamilyHistoryForm(){
+    $familyHistory = $('#familyHistory').val().replace(/^\s+|\s+$/gm,'');
+    $slnoFam = $('#slnoFam').val();
+    
+    $status = true;
+
+    if($familyHistory == ''){
+        $status = false;
+        $('#familyHistory').removeClass('is-valid');
+        $('#familyHistory').addClass('is-invalid');
+    }else{
+        $status = true;
+        $('#familyHistory').removeClass('is-invalid');
+        $('#familyHistory').addClass('is-valid');
+    }       
+
+    $('#submitForm7_spinner').hide();
+    $('#submitForm7_spinner_text').hide();
+    $('#submitForm7_text').show();
+
+    return $status;
+}//en validate form
+
+function clearFamilyHistForm(){
+    $('#familyHistory').val('');
+    $('#familyHistory').removeClass('is-valid');
+    $('#familyHistory').removeClass('is-invalid');
+}//end fun
+
+$('#familyAdd').click(function(){
+    $('#submitForm7_spinner').show();
+    $('#submitForm7_spinner_text').show();
+    $('#submitForm7_text').hide();
+
+    setTimeout(function(){
+        $familyHistFormVallidStatus = validateFamilyHistoryForm();
+
+        if($familyHistFormVallidStatus == true){
+            clearFamilyHistForm()
+            $('#familyHistoryModal').modal('hide');
+
+            $action_del = "<a href='javascript: void(0)' class='delete_name' data-row_slno='"+$slnoFam+"'><i class='fa fa-trash' aria-hidden='true'></i></a>";
+
+            var t = $('#familyHistoryTable').DataTable();
+            t.row.add([$slnoFam, $familyHistory, $action_del]).draw(false); 
+           
+            $slnoFam++;
+            $('#slnoImu').val($slnoFam);              
+        }
+    }, 500)    
+})
+
+//Delete 
+$('#familyHistoryTable').on('click', '.delete_name', function(){
+    if (confirm('Are you sure to delete the Row?')) {
+
+        var table = $('#familyHistoryTable').DataTable();
+
+        table
+        .row( $(this).parents('tr') )
+        .remove()
+        .draw();
+        
+
+        /*$gm_id = $(this).data('gm_id');
+        $group_sub_category = $('#group_sub_category').val().replace(/^\s+|\s+$/gm,'');
+        $('#orgTableAlert').css("display", "none");
+        $('#orgTableAlert1').css("display", "none");
+
+        $.ajax({
+            method: "POST",
+            url: "patient_management/investigation/function.php",
+            data: { fn: "deleteName", gm_id: $gm_id }
+        })
+        .done(function( res ) {
+            //console.log(res);
+            $res1 = JSON.parse(res);
+            if($res1.status == true){
+                $('#orgTableAlert').show();
+                populateDataTable($group_sub_category);
+            }
+        });*/ //end ajax
+    }		
+}) 
+//End Personal/Family History
 
 
 function populateDataTable($gc_id){
