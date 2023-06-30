@@ -1,38 +1,39 @@
-$('#otSchedulingAdd').on('click', function(){
-    $('#otSchedulingModal').modal('show');
+$('#synopsisSurgeryAdd').on('click', function(){
+    $('#synopsisSurgeryModal').modal('show');
 })
 
 function validateForm(){
-    $surgeryDate = $('#surgeryDate').val().replace(/^\s+|\s+$/gm,'');
+    $dateTime = $('#dateTime').val().replace(/^\s+|\s+$/gm,'');
     $patientID = $('#patientID').val().replace(/^\s+|\s+$/gm,'');
-    $patientName = $('#patientName').val().replace(/^\s+|\s+$/gm,'');
-    $age = $('#age').val().replace(/^\s+|\s+$/gm,'');
-    $gender = $('#gender').val();
-    $gender_text = $('#gender option:selected').text();
-    $bloodGroup = $('#bloodGroup').val();
-    $bloodGroup_text = $('#bloodGroup option:selected').text();
-    $hospitalName = $('#hospitalName').val();
-    $hospitalName_text = $('#hospitalName option:selected').text();
-    $surgeryPlanned = $('#surgeryPlanned').val();
-    $surgeryPlanned_text = $('#surgeryPlanned option:selected').text();
-    $position = $('#position').val().replace(/^\s+|\s+$/gm,'');
-    $surgeryType = $('#surgeryType').val();
-    $surgeryType_text = $('#surgeryType option:selected').text();
-    $insuranceCovered = $('#insuranceCovered').val();
-    $insuranceCovered_text = $('#insuranceCovered option:selected').text();
-    $medicalInsurerName = $('#medicalInsurerName').val().replace(/^\s+|\s+$/gm,'');
+    $preOperativeDiagnosis = $('#preOperativeDiagnosis').val().replace(/^\s+|\s+$/gm,'');
+    $postOperartiveDiagnosis = $('#postOperartiveDiagnosis').val().replace(/^\s+|\s+$/gm,'');
+    $procedureName = $('#procedureName').val().replace(/^\s+|\s+$/gm,'');
+    $intraoperativePeriod = $('#intraoperativePeriod').val().replace(/^\s+|\s+$/gm,'');
+    $complications = $('#complications').val().replace(/^\s+|\s+$/gm,'');
+    $admittedUnderDoctor = $('#admittedUnderDoctor').val().replace(/^\s+|\s+$/gm,'');
+    $otAssistantDetails = $('#otAssistantDetails').val().replace(/^\s+|\s+$/gm,'');
+    $typeofAnesthesia = $('#typeofAnesthesia').val().replace(/^\s+|\s+$/gm,'');
+    $findings = $('#findings').val().replace(/^\s+|\s+$/gm,'');
+    $incisionDetails = $('#incisionDetails').val().replace(/^\s+|\s+$/gm,'');
+    $scarDetails = $('#scarDetails').val().replace(/^\s+|\s+$/gm,'');
+    $suturesUsed = $('#suturesUsed').val().replace(/^\s+|\s+$/gm,'');
+    $needsToRemove = $('#needsToRemove').val().replace(/^\s+|\s+$/gm,'');
+    $estimatedBloodLoss = $('#estimatedBloodLoss').val().replace(/^\s+|\s+$/gm,'');
+    $sampleForLabTest = $('#sampleForLabTest').val().replace(/^\s+|\s+$/gm,'');
+    $statusNote = $('#statusNote').val().replace(/^\s+|\s+$/gm,'');
+    
     $slno = $('#slno').val();
     
     $status = true;
 
-    if($surgeryDate == ''){
+    if($dateTime == ''){
         $status = false;
-        $('#surgeryDate').removeClass('is-valid');
-        $('#surgeryDate').addClass('is-invalid');
+        $('#dateTime').removeClass('is-valid');
+        $('#dateTime').addClass('is-invalid');
     }else{
         $status = true;
-        $('#surgeryDate').removeClass('is-invalid');
-        $('#surgeryDate').addClass('is-valid');
+        $('#dateTime').removeClass('is-invalid');
+        $('#dateTime').addClass('is-valid');
     }  
 
     $('#submitForm_spinner').hide();
@@ -43,9 +44,9 @@ function validateForm(){
 }//en validate form
 
 function clearForm(){
-    $('#surgeryDate').val('');
-    $('#surgeryDate').removeClass('is-valid');
-    $('#surgeryDate').removeClass('is-invalid');
+    $('#dateTime').val('');
+    $('#dateTime').removeClass('is-valid');
+    $('#dateTime').removeClass('is-invalid');
 
 }//end 
 
@@ -63,12 +64,12 @@ $('#submitForm').click(function(){
 
         if($formVallidStatus == true){
             clearForm()
-            $('#otSchedulingModal').modal('hide');
+            $('#synopsisSurgeryModal').modal('hide');
 
             $action_del = "<a href='javascript: void(0)' class='delete_name' data-row_slno='"+$slno+"'><i class='fa fa-trash' aria-hidden='true'></i></a>";
 
-            var t = $('#otScheduletable').DataTable();
-            t.row.add([$slno, $surgeryDate, $patientID+'<br>'+$patientName, $hospitalName, $surgeryPlanned_text, $surgeryType_text, $insuranceCovered_text, $action_del]).draw(false); 
+            var t = $('#synopsisSurgeryTable').DataTable();
+            t.row.add([$slno, $dateTime, $patientID, $postOperartiveDiagnosis, $postOperartiveDiagnosis, $procedureName, $intraoperativePeriod, $action_del]).draw(false); 
            
             $slno++;
             $('#slno').val($slno);
@@ -76,7 +77,7 @@ $('#submitForm').click(function(){
             /*$service_id = $('#service_id').val();
             $.ajax({
                 method: "POST",
-                url: "ot_mgt/ot_scheduling/function.php",
+                url: "ot_mgt/synopsis_of_surgery/function.php",
                 data: { fn: "saveServices", service_id: $service_id, Parameter: $Parameter, serviceDescription: $serviceDescription }
             })
             .done(function( res ) {
@@ -102,7 +103,7 @@ function editService($service_id){
     $('#exampleModalLong').modal('show');
     $.ajax({
         method: "POST",
-        url: "ot_mgt/ot_scheduling/function.php",
+        url: "ot_mgt/synopsis_of_surgery/function.php",
         data: { fn: "getServiceData", service_id: $service_id }
     })
     .done(function( res ) {
@@ -118,9 +119,9 @@ function editService($service_id){
 }
 
 //Delete function Medicine table
-$('#otScheduletable').on('click', '.delete_name', function(){
+$('#synopsisSurgeryTable').on('click', '.delete_name', function(){
     if (confirm('Are you sure to delete the Row?')) {
-        var table = $('#otScheduletable').DataTable();
+        var table = $('#synopsisSurgeryTable').DataTable();
 
         table
         .row( $(this).parents('tr') )
@@ -152,7 +153,7 @@ $('#otScheduletable').on('click', '.delete_name', function(){
 function configureAllDropDown(){
     $.ajax({
         method: "POST",
-        url: "ot_mgt/ot_scheduling/function.php",
+        url: "ot_mgt/synopsis_of_surgery/function.php",
         data: { fn: "getAllGroupOptionName" }
     })
     .done(function( res ) {
@@ -180,13 +181,13 @@ function configureAllDropDown(){
 
 
 function populateDataTable(){
-    $('#otScheduletable').dataTable().fnClearTable();
-    $('#otScheduletable').dataTable().fnDestroy();
+    $('#synopsisSurgeryTable').dataTable().fnClearTable();
+    $('#synopsisSurgeryTable').dataTable().fnDestroy();
 
-    $('#otScheduletable').DataTable({ 
+    $('#synopsisSurgeryTable').DataTable({ 
         responsive: true,
         serverMethod: 'GET',
-        ajax: {'url': 'ot_mgt/ot_scheduling/function.php?fn=getScheduleData' },
+        ajax: {'url': 'ot_mgt/synopsis_of_surgery/function.php?fn=getScheduleData' },
         dom: 'Bfrtip',
         buttons: [
             {

@@ -70,32 +70,32 @@
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						</div>
                         
-                        <button type="button" class="btn btn-primary mb-2 float-right" id="otSchedulingAdd">Add New</button>
+                        <button type="button" class="btn btn-primary mb-2 float-right" id="synopsisSurgeryAdd">Add New</button>
 
                         
                         <div class="table-responsive">
-                            <table id="otScheduletable" class="table table-striped" style="width:100%">
+                            <table id="synopsisSurgeryTable" class="table table-striped" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th>Sl.No.</th>
-                                        <th>Surgery Date</th>
+                                        <th>Date & Time</th>
                                         <th>Patient ID<br>Patient Name</th>
-                                        <th>Hospital</th>
-                                        <th>Surgery<br>Planned</th>
-                                        <th>Surgery<br>Type</th>
-                                        <th>Insurance<br>Covered</th>
+                                        <th>Pre Operative<br>Diagnosis</th>
+                                        <th>Post Operartive<br>Diagnosis</th>
+                                        <th>Procedure<br>Name</th>
+                                        <th>Intraoperative<br>period</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
                                         <th>Sl.No.</th>
-                                        <th>Surgery Date</th>
+                                        <th>Date & Time</th>
                                         <th>Patient ID<br>Patient Name</th>
-                                        <th>Hospital</th>
-                                        <th>Surgery<br>Planned</th>
-                                        <th>Surgery<br>Type</th>
-                                        <th>Insurance<br>Covered</th>
+                                        <th>Pre Operative<br>Diagnosis</th>
+                                        <th>Post Operartive<br>Diagnosis</th>
+                                        <th>Procedure<br>Name</th>
+                                        <th>Intraoperative<br>period</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>
@@ -107,7 +107,7 @@
             </div>
 
             <!-- Modal start -->
-            <div id="otSchedulingModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div id="synopsisSurgeryModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -118,172 +118,213 @@
                             <form class="needs-validation" novalidate>
                                 <div class="form-row">
                                     <div class="col-md-3 mb-3">
-                                        <label for="surgeryDate">Surgery Date*</label>
-                                        <input type="date" class="form-control" id="surgeryDate" value="" >
+                                        <label for="dateTime">Date & Time*</label>
+                                        <input type="date" class="form-control" id="dateTime" value="" >
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
                                         <div class="invalid-feedback">
-                                            Please provide Surgery Date.
+                                            Please provide Date & Time.
                                         </div>
                                     </div> 
                                     
                                     <div class="col-md-3 mb-3">
-                                        <label for="patientID">Patient ID*</label>
-                                        <input type="text" class="form-control" id="patientID" placeholder="Patient ID" value="" required> 
+                                        <label for="patientID">Patient Name/Id Number*</label>
+                                        <input type="text" class="form-control" id="patientID" placeholder="Patient Name/Id Number" value="" required> 
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
                                         <div class="invalid-feedback">
-                                            Please provide Patient ID.
+                                            Please provide Patient Name/Id Number.
                                         </div>
                                     </div> 
                                     
                                     <div class="col-md-3 mb-3">
-                                        <label for="patientName">Name</label>
-                                        <input type="text" class="form-control" id="patientName" placeholder="Name" value="" > 
+                                        <label for="preOperativeDiagnosis">Pre Operative Diagnosis</label>
+                                        <input type="text" class="form-control" id="preOperativeDiagnosis" placeholder="Pre Operative Diagnosis" value="" > 
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
                                         <div class="invalid-feedback">
-                                            Please provide Name.
+                                            Please provide Pre Operative Diagnosis.
                                         </div>
                                     </div>  
                                     
                                     <div class="col-md-3 mb-3">
-                                        <label for="age">Age*</label>
-                                        <input type="text" class="form-control" id="age" placeholder="Age" value="" > 
+                                        <label for="postOperartiveDiagnosis">Post Operartive Diagnosis*</label>
+                                        <input type="text" class="form-control" id="postOperartiveDiagnosis" placeholder="Post Operartive Diagnosis" value="" > 
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
                                         <div class="invalid-feedback">
-                                            Please provide Age.
+                                            Please provide Post Operartive Diagnosis.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">                                      
+                                    <div class="col-md-3 mb-3">
+                                        <label for="procedureName">Procedure Name*</label>
+                                        <input type="text" class="form-control" id="procedureName" placeholder="Procedure Name" value="" > 
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>                                    
+                                        <div class="invalid-feedback">
+                                            Please provide Post Procedure Name.
+                                        </div>
+                                    </div>  
+                                    
+                                    <div class="col-md-3 mb-3">
+                                        <label for="intraoperativePeriod">Intraoperative period*</label>
+                                        <input type="text" class="form-control" id="intraoperativePeriod" placeholder="Intraoperative period" value="" > 
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>                                    
+                                        <div class="invalid-feedback">
+                                            Please provide Post Intraoperative period.
+                                        </div>
+                                    </div>  
+                                    
+                                    <div class="col-md-3 mb-3">
+                                        <label for="complications">Complications (If Any)</label>
+                                        <input type="text" class="form-control" id="complications" placeholder="Complications" value="" > 
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>                                    
+                                        <div class="invalid-feedback">
+                                            Please provide Post Complications.
+                                        </div>
+                                    </div>  
+                                    
+                                    <div class="col-md-3 mb-3">
+                                        <label for="admittedUnderDoctor">Admitted Under Doctor</label>
+                                        <input type="text" class="form-control" id="admittedUnderDoctor" placeholder="Admitted Under Doctor" value="" > 
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>                                    
+                                        <div class="invalid-feedback">
+                                            Please provide Post Admitted Under Doctor.
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-row">
                                     <div class="col-md-3 mb-3">
-                                        <label for="gender">Gender*</label>
-                                        <select class="mb-3 form-control" id="gender">
-                                            <option value="0">Select Gender</option>
-                                            <option value="1">Male</option>
-                                            <option value="2">Female</option>
-                                            <option value="3">Other</option>
-                                        </select>                                        
-                                        
+                                        <label for="otAssistantDetails">OT Assistant Details</label>
+                                        <input type="text" class="form-control" id="otAssistantDetails" placeholder="OT Assistant Details" value=""> 
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
                                         <div class="invalid-feedback">
-                                            Please Select Gender.
+                                            Please provide OT Assistant Details.
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 mb-3">
+                                        <label for="typeofAnesthesia">Type of Anesthesia</label>
+                                        <input type="text" class="form-control" id="typeofAnesthesia" placeholder="Type of Anesthesia" value=""> 
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>                                    
+                                        <div class="invalid-feedback">
+                                            Please provide Type of Anesthesia.
                                         </div>
                                     </div> 
 
                                     <div class="col-md-3 mb-3">
-                                        <label for="bloodGroup">Blood Group*</label>
-                                        <select class="mb-3 form-control" id="bloodGroup">
-                                            <option value="0">Select Blood Group</option>
-                                            <option value="1">A+</option>
-                                            <option value="2">B+</option>
-                                            <option value="3">AB+</option>
-                                            <option value="4">O+</option>
-                                            <option value="5">A-</option>
-                                            <option value="6">B-</option>
-                                            <option value="7">AB-</option>
-                                            <option value="8">O-</option>
-                                        </select>                                        
-                                        
+                                        <label for="findings">Findings</label>
+                                        <input type="text" class="form-control" id="findings" placeholder="(Positive & Negative)" value=""> 
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
                                         <div class="invalid-feedback">
-                                            Please Select Blood Group.
+                                            Please provide Findings.
                                         </div>
-                                    </div>
-                                    
+                                    </div> 
+
                                     <div class="col-md-3 mb-3">
-                                        <label for="hospitalName">Hospital*</label>
-                                        <select class="mb-3 form-control" id="hospitalName">
-                                            <option value="0">Select Hospital</option>
-                                            <option value="1">Balananda Brahmachari Hospital And Research Centre(BBH)</option>
-                                            <option value="2">RG Stone Urology & Laparoscopy Hospital(RGS)</option>
-                                        </select>                       
+                                        <label for="incisionDetails">Incision Details</label>
+                                        <input type="text" class="form-control" id="incisionDetails" placeholder="Incision Details" value=""> 
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
                                         <div class="invalid-feedback">
-                                            Please provide Mobile No.
+                                            Please provide Incision Details.
                                         </div>
-                                    </div>                                    
-                                    <div class="col-md-3 mb-3">
-                                        <label for="surgeryPlanned">Surgery Planned*</label>
-                                        <select class="mb-3 form-control" id="surgeryPlanned">
-                                            <option value="0">Select Surgery Planned</option>
-                                        </select>                       
-                                        <div class="valid-feedback">
-                                            Looks good!
-                                        </div>                                    
-                                        <div class="invalid-feedback">
-                                            Please provide Mobile No.
-                                        </div>
-                                    </div>  
+                                    </div> 
 
                                 </div>
 
                                 <div class="form-row">
                                     <div class="col-md-3 mb-3">
-                                        <label for="position">Position</label>
-                                        <input type="text" class="form-control" id="position" placeholder="Position" value=""> 
+                                        <label for="scarDetails">Scar Details</label>
+                                        <input type="text" class="form-control" id="scarDetails" placeholder="Scar Details" value=""> 
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
                                         <div class="invalid-feedback">
-                                            Please provide Position.
+                                            Please provide Scar Details.
                                         </div>
-                                    </div>  
+                                    </div>
 
                                     <div class="col-md-3 mb-3">
-                                        <label for="surgeryType">Surgery Type*</label>
-                                        <select class="mb-3 form-control" id="surgeryType">
-                                            <option value="0">Select Surgery Type</option>
-                                            <option value="1">Open surgery</option>
-                                            <option value="2">Minimally invasive surgery</option>
-                                        </select>                       
+                                        <label for="suturesUsed">Sutures Used</label>
+                                        <input type="text" class="form-control" id="suturesUsed" placeholder="Sutures Used" value=""> 
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
                                         <div class="invalid-feedback">
-                                            Please provide Mobile No.
+                                            Please provide Sutures Used.
                                         </div>
-                                    </div>  
+                                    </div> 
 
                                     <div class="col-md-3 mb-3">
-                                        <label for="insuranceCovered">Insurance Covered*</label>
-                                        <select class="mb-3 form-control" id="insuranceCovered">
-                                            <option value="0">Select Insurance</option>
-                                            <option value="1">Yes</option>
-                                            <option value="2">NO</option>
-                                        </select>                       
+                                        <label for="needsToRemove">Items nees to be removed </label>
+                                        <input type="text" class="form-control" id="needsToRemove" placeholder="Needs To Remove" value=""> 
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
                                         <div class="invalid-feedback">
-                                            Please provide Mobile No.
+                                            Please provide Findings.
                                         </div>
-                                    </div>   
+                                    </div> 
 
                                     <div class="col-md-3 mb-3">
-                                        <label for="medicalInsurerName">Medical Insurer Name</label>
-                                        <input type="text" class="form-control" id="medicalInsurerName" placeholder="Medical Insurer Name" value=""> 
+                                        <label for="estimatedBloodLoss">Estimated Blood Loss</label>
+                                        <input type="text" class="form-control" id="estimatedBloodLoss" placeholder="Estimated Blood Loss" value=""> 
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
                                         <div class="invalid-feedback">
-                                            Please provide Medical Insurer Name.
+                                            Please provide Incision Details.
                                         </div>
                                     </div> 
                                 </div>
+
+                                <div class="form-row">
+                                    <div class="col-md-3 mb-3">
+                                        <label for="sampleForLabTest">Samples sent for </label>
+                                        <input type="text" class="form-control" id="sampleForLabTest" placeholder="laboratory testing" value=""> 
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>                                    
+                                        <div class="invalid-feedback">
+                                            Please provide sample For Lab Test.
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 mb-3">
+                                        <label for="statusNote">Post Operaive Status Note</label>
+                                        <input type="text" class="form-control" id="statusNote" placeholder="Post Operaive Status Note" value=""> 
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>                                    
+                                        <div class="invalid-feedback">
+                                            Please provide Post Operaive Status Note.
+                                        </div>
+                                    </div> 
+                                </div>
+
                             </form>
                         </div>
                         <div class="modal-footer">
@@ -309,4 +350,4 @@
 <!-- [ Main Content ] end -->
 	<?php include('common/footer.php'); ?>
     
-    <script src="ot_mgt/ot_scheduling/function.js"></script>
+    <script src="ot_mgt/synopsis_of_surgery/function.js"></script>

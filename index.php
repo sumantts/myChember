@@ -71,6 +71,11 @@
 		case 'ot_scheduling':
 			$title = "OT Scheduling";
 			include('ot_mgt/ot_scheduling/ot_scheduling.php');		
+		break;	
+
+		case 'synopsis_surgery':
+			$title = "Synopsis of Surgery";
+			include('ot_mgt/synopsis_of_surgery/synopsis_of_surgery.php');		
 		break;
 						
 		default:
