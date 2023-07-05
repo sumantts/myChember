@@ -184,7 +184,7 @@
                                         </div>
                                     </div>     
 
-                                    <div class="col-md-3 mb-3">
+                                    <div class="col-md-2 mb-3">
                                         <label for="serviceDescription">Temperature</label>
                                         <input type="numver" class="form-control" id="Location" placeholder="Deg F" value="" > 
                                         <div class="valid-feedback">
@@ -195,7 +195,7 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="col-md-3 mb-3">
+                                    <div class="col-md-2 mb-3">
                                         <label for="serviceDescription">BP</label>
                                         <input type="text" class="form-control" id="serviceDescription" placeholder="SYS" value="" > 
                                         <div class="valid-feedback">
@@ -206,9 +206,20 @@
                                         </div>
                                     </div> 
                                     
-                                    <div class="col-md-3 mb-3">
+                                    <div class="col-md-2 mb-3">
                                         <label for="serviceDescription">BP</label>
                                         <input type="text" class="form-control" id="serviceDescription" placeholder="DIA" value="" > 
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>                                    
+                                        <div class="invalid-feedback">
+                                            Please provide BP DIA.
+                                        </div>
+                                    </div>  
+                                    
+                                    <div class="col-md-3 mb-3">
+                                        <label for="nextVisitDate">Next Visit Date</label>
+                                        <input type="date" class="form-control" id="nextVisitDate" placeholder="" value="" > 
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
@@ -224,7 +235,7 @@
                                         <button class="btn  btn-primary" type="button" id="submitForm">
                                             <span class="spinner-border spinner-border-sm" role="status" style="display: none;" id="submitForm_spinner"></span>
                                             <span class="load-text" style="display: none;" id="submitForm_spinner_text">Loading...</span>
-                                            <span class="btn-text" id="submitForm_text">Update</span>
+                                            <span class="btn-text" id="submitForm_text">Save</span>
                                         </button>
                                     </div> 
                                 </div>

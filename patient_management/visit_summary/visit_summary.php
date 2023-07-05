@@ -169,42 +169,57 @@
                             <div class="card-body">
                                 <h4>Visit Summary Report as on <?=date('d-m-Y', strtotime($searchdate))?></h4>
                                 <div class="table-responsive">
-                                    <table id="visitSummaryTable" class="table table-striped" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>Sl.No.</th>
-                                                <th>Patient ID<br>Patient Name</th>
-                                                <th>Gender<br>Age</th>
-                                                <th>Contact No</th>
-                                                <th>Visit Count</th>
-                                                <th>Chief Complaints</th>
-                                                <th>Observations</th>
-                                                <th>Advice Given</th>
-                                                <th>Diagnosis</th>
-                                                <th>Investigation</th>
-                                                <th>Procedures</th>
-                                                <th>Followup</th>
-                                                <th>Visit Charges</th>
-                                            </tr>
-                                        </thead>
-
+                                    <table id="visitSummaryTable" class="table table-striped" style="width:100%">                                       
                                         <tbody>
-                                            <!-- Single Report start -->
                                             <tr>
-                                                <th>1</th>
-                                                <td>10001<br>Banalata Sen</td>
-                                                <td>Female<br>47</td>
-                                                <td>9876543210</td>
-                                                <td>5</td>
-                                                <td>N/A</td>
-                                                <td>N/A</td>
-                                                <td>N/A</td>
-                                                <td>N/A</td>
-                                                <td>N/A</td>
-                                                <td>N/A</td>
-                                                <td>30-06-2023</td>
-                                                <td>Rs. 500/-</td>
+                                                <th colspan="6">Patient ID<br>Patient Name</th>
+                                                <td colspan="7">10001<br>Banalata Sen</td>
                                             </tr>
+                                            <tr>
+                                                <th colspan="6">Gender<br>Age</th>
+                                                <td colspan="7">Female<br>47</td>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="6">Contact No</th>
+                                                <td colspan="7">9876543210</td>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="6">Visit Count</th>
+                                                <td colspan="7">5</td>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="6">Chief Complaints</th>
+                                                <td colspan="7">N/A</td>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="6">Observations</th>
+                                                <td colspan="7">N/A</td>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="6">Advice Given</th>
+                                                <td colspan="7">N/A</td>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="6">Diagnosis</th>
+                                                <td colspan="7">N/A</td>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="6">Investigation</th>
+                                                <td colspan="7">N/A</td>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="6">Procedures</th>
+                                                <td colspan="7">N/A</td>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="6">Followup</th>
+                                                <td colspan="7">30-06-2023</td>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="6">Visit Charges</th>
+                                                <td colspan="7">Rs. 500/-</td>
+                                            </tr>
+                                            
                                             <tr>
                                                 <td colspan="13">
                                                     <h5>Prescriptions: <a href="javascript: void(0)" onClick="$('#prescriptionTable_1').toggle()">Show</a></h5>
@@ -244,19 +259,52 @@
                                             <!-- Single Report end -->
                                             <!-- Single Report start -->
                                             <tr>
-                                                <th>2</th>
-                                                <td>10001<br>Sukumar Roy</td>
-                                                <td>Female<br>38</td>
-                                                <td>9632587410</td>
-                                                <td>3</td>
-                                                <td>1. Weight Loss<br>2. Abnormal BP</td>
-                                                <td>N/A</td>
-                                                <td>1. Do exercise as suggested<br>2. Follow diet as planned for you</td>
-                                                <td>1. Blood and Urine tests</td>
-                                                <td>1. X-rays<br>2. Ultrasound</td>
-                                                <td>N/A</td>
-                                                <td>30-06-2023</td>
-                                                <td>Rs. 500/-</td>
+                                                <th colspan="6">Patient ID<br>Patient Name</th>
+                                                <td colspan="7">10001<br>Sukumar Roy</td>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="6">Gender<br>Age</th>
+                                                <td colspan="7">Female<br>38</td>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="6">Contact No</th>
+                                                <td colspan="7">9632587410</td>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="6">Visit Count</th>
+                                                <td colspan="7">3</td>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="6">Chief Complaints</th>
+                                                <td colspan="7">1. Weight Loss<br>2. Abnormal BP</td>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="6">Observations</th>
+                                                <td colspan="7">N/A</td>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="6">Advice Given</th>
+                                                <td colspan="7">1. Do exercise as suggested<br>2. Follow diet as planned for you</td>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="6">Diagnosis</th>
+                                                <td colspan="7">1. Blood and Urine tests</td>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="6">Investigation</th>
+                                                <td colspan="7">1. X-rays<br>2. Ultrasound</td>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="6">Procedures</th>
+                                                <td colspan="7">N/A</td>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="6">Followup</th>
+                                                <td colspan="7">30-06-2023</td>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="6">Visit Charges</th>
+                                                <td colspan="7">Rs. 500/-</td>
                                             </tr>
                                             <tr>
                                                 <td colspan="13">

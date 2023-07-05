@@ -1,0 +1,9 @@
+1. All Button Should Be Iconic
+2. Group Master - Add New Button
+3. On Line Appointment Page - Should Be open from Outside
+4. Patient Past History - Remove all Update Button
+5. Patient Investigation - Remove all Update Button, Reference Text Box
+6. Upload documents - New Page 
+7. Visit Summary - Input Date Format Check, Segregate line between two patient records
+8. Fees From Hospital - Tables data need to fillup as per excel
+9. SMS screen - All

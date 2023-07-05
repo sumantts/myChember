@@ -6,9 +6,9 @@
 		$dbname = 'my_chember';
 	}else{	
 		$host = 'localhost';
-		$username = 'my_chember';
-		$password = 'my_chember123';
-		$dbname = 'my_chember';
+		$username = 'pioneers_mychember';
+		$password = 'mychember123';
+		$dbname = 'pioneers_mychember';
 	}
 	$mysqli = new mysqli($host, $username, $password, $dbname);
 

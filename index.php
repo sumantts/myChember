@@ -87,6 +87,19 @@
 			$title = "Synopsis of Surgery";
 			include('ot_mgt/synopsis_of_surgery/synopsis_of_surgery.php');		
 		break;
+
+		//Billing Management		
+		case 'hospital_fees':
+			$title = "Fees From Hospital";
+			include('b_mgt/hospital_fees/hospital_fees.php');		
+		break;
+
+		//Reports		
+		case 'patient_register':
+			$title = "Patient Register";
+			include('reports/patient_register/patient_register.php');		
+		break;	
+
 						
 		default:
 		include('signin/signin.php');
