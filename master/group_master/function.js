@@ -1,3 +1,7 @@
+$('#newGroupAdd').on('click', function(){
+    $('#exampleModalLong').modal('show');
+})
+
 function configureGroupName(){
     $.ajax({
         method: "POST",

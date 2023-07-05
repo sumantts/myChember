@@ -18,10 +18,10 @@
 					    </ul>
 					</li>
 
-					<li class="nav-item pcoded-hasmenu <?php if($p == 'online_appointment' || $p == 'new_patient_registration' || $p == 'patient_past_history' || $p == 'investigation' || $p == 'upload_documents' || $p == 'visit_summary' || $p == 'search_patient' || $p == 'reminder_sms' || $p == 'reply_queries_chat'){ ?> active pcoded-trigger <?php } ?>">
+					<li class="nav-item pcoded-hasmenu <?php if($p == 'onlineappo' || $p == 'new_patient_registration' || $p == 'patient_past_history' || $p == 'investigation' || $p == 'upload_documents' || $p == 'visit_summary' || $p == 'search_patient' || $p == 'reminder_sms' || $p == 'reply_queries_chat'){ ?> active pcoded-trigger <?php } ?>">
 						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Patient Management</span></a>
 						<ul class="pcoded-submenu">
-							<li <?php if($p == 'online_appointment'){ ?> class="active" <?php } ?>><a href="https://drpallabsaha.com/contact/" target="blank">Online Appointment</a></li>
+							<li <?php if($p == 'onlineappo'){ ?> class="active" <?php } ?>><a href="?p=onlineappo" target="blank">Online Appointment</a></li>
 							<li <?php if($p == 'new_patient_registration'){ ?> class="active" <?php } ?>><a href="?p=new_patient_registration&gr=p_mgt">New Patient Registration</a></li>
 							<li <?php if($p == 'patient_past_history'){ ?> class="active" <?php } ?>><a href="?p=patient_past_history&gr=p_mgt">Patient Past History</a></li>
 							<li <?php if($p == 'investigation'){ ?> class="active" <?php } ?>><a href="?p=investigation&gr=p_mgt">Investigation</a></li>

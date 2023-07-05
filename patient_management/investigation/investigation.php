@@ -283,13 +283,13 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="col-md-3 mt-2">
+                                    <!-- <div class="col-md-3 mt-2">
                                         <button class="btn btn-primary mt-3" type="button" id="submitForm">
                                             <span class="spinner-border spinner-border-sm" role="status" style="display: none;" id="submitForm_spinner"></span>
                                             <span class="load-text" style="display: none;" id="submitForm_spinner_text">Loading...</span>
                                             <span class="btn-text" id="submitForm_text">Update</span>
                                         </button>
-                                    </div>                                    
+                                    </div> -->
                                 </div>
                             </form>
 
@@ -355,13 +355,13 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="col-md-3 mt-2">
+                                    <!-- <div class="col-md-3 mt-2">
                                         <button class="btn btn-primary mt-3" type="button" id="submitForm">
                                             <span class="spinner-border spinner-border-sm" role="status" style="display: none;" id="submitForm_spinner"></span>
                                             <span class="load-text" style="display: none;" id="submitForm_spinner_text">Loading...</span>
                                             <span class="btn-text" id="submitForm_text">Update</span>
                                         </button>
-                                    </div>                                    
+                                    </div> -->
                                 </div>
                             </form>
                         </div>
@@ -404,13 +404,13 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="col-md-3 mt-2">
+                                    <!-- <div class="col-md-3 mt-2">
                                         <button class="btn btn-primary mt-3" type="button" id="submitForm">
                                             <span class="spinner-border spinner-border-sm" role="status" style="display: none;" id="submitForm_spinner"></span>
                                             <span class="load-text" style="display: none;" id="submitForm_spinner_text">Loading...</span>
                                             <span class="btn-text" id="submitForm_text">Update</span>
                                         </button>
-                                    </div>                                    
+                                    </div> -->
                                 </div>
                             </form>
                         </div>
@@ -453,13 +453,13 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="col-md-3 mt-2">
+                                    <!-- <div class="col-md-3 mt-2">
                                         <button class="btn btn-primary mt-3" type="button" id="submitForm">
                                             <span class="spinner-border spinner-border-sm" role="status" style="display: none;" id="submitForm_spinner"></span>
                                             <span class="load-text" style="display: none;" id="submitForm_spinner_text">Loading...</span>
                                             <span class="btn-text" id="submitForm_text">Update</span>
                                         </button>
-                                    </div>                                    
+                                    </div> -->
                                 </div>
                             </form>
                         </div>
@@ -502,13 +502,13 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="col-md-3 mt-2">
+                                    <!-- <div class="col-md-3 mt-2">
                                         <button class="btn btn-primary mt-3" type="button" id="submitForm">
                                             <span class="spinner-border spinner-border-sm" role="status" style="display: none;" id="submitForm_spinner"></span>
                                             <span class="load-text" style="display: none;" id="submitForm_spinner_text">Loading...</span>
                                             <span class="btn-text" id="submitForm_text">Update</span>
                                         </button>
-                                    </div>                                    
+                                    </div> -->
                                 </div>
                             </form>
                         </div>
@@ -551,13 +551,13 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="col-md-3 mt-2">
+                                    <!-- <div class="col-md-3 mt-2">
                                         <button class="btn btn-primary mt-3" type="button" id="submitForm">
                                             <span class="spinner-border spinner-border-sm" role="status" style="display: none;" id="submitForm_spinner"></span>
                                             <span class="load-text" style="display: none;" id="submitForm_spinner_text">Loading...</span>
                                             <span class="btn-text" id="submitForm_text">Update</span>
                                         </button>
-                                    </div>                                    
+                                    </div> -->
                                 </div>
                             </form>
 
@@ -623,13 +623,13 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="col-md-3 mt-2">
+                                    <!-- <div class="col-md-3 mt-2">
                                         <button class="btn btn-primary mt-3" type="button" id="submitForm">
                                             <span class="spinner-border spinner-border-sm" role="status" style="display: none;" id="submitForm_spinner"></span>
                                             <span class="load-text" style="display: none;" id="submitForm_spinner_text">Loading...</span>
                                             <span class="btn-text" id="submitForm_text">Update</span>
                                         </button>
-                                    </div>                                    
+                                    </div> -->
                                 </div>
                             </form>
 
@@ -714,7 +714,7 @@
                                 <div class="form-row">                                    
                                     <div class="col-md-3 mb-3">
                                         <label for="Parameter">Rererences Name*</label>
-                                        <input type="text" class="form-control" id="Parameter" placeholder="Document Type" value="" required >
+                                        <input type="text" class="form-control" id="Parameter" value="" required >
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                    
@@ -723,20 +723,66 @@
                                         </div>
                                     </div> 
                                     
-                                    <div class="col-md-2 mt-4">
+                                    <!-- <div class="col-md-2 mt-4">
                                         <button class="btn  btn-primary" type="button" id="submitForm">
                                             <span class="spinner-border spinner-border-sm" role="status" style="display: none;" id="submitForm_spinner"></span>
                                             <span class="load-text" style="display: none;" id="submitForm_spinner_text">Loading...</span>
                                             <span class="btn-text" id="submitForm_text">Update</span>
                                         </button>
-                                    </div>
+                                    </div> -->
                                 </div>                                
                                 <!-- <button class="btn  btn-primary" type="button" id="submitForm">Submit form</button> -->
                             </form>
                         </div>
-                    </div>                
+                    </div>         
+                    <button type="button" class="btn btn-primary ml-2 float-right" id="followUpSMS">Follo Up</button>  
+                    <button type="button" class="btn btn-primary mb-2 float-right" id="saveInvestigation">Save</button>           
                 </div>
                 <!-- [ sample-page ] end -->
+                
+				          
+
+                <!-- Modal start -->
+                <div id="visitSMSMOdal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="visitSMSMOdalTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="visitSMSMOdalTitle">Visit SMS</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/sms/Visit.png" height="75%" width="50%" >   
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal end -->
+                
+				          
+
+                <!-- Modal start -->
+                <div id="followUpSMSModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="followUpSMSModalTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="followUpSMSModalTitle">Follow Up SMS</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/sms/Followup.png" height="75%" width="50%" >   
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal end -->
+
+                
 
                 <!-- Procedures Modal start -->
                 <div id="proceduresModal" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="proceduresModalTitle" aria-hidden="true">

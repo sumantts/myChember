@@ -76,7 +76,7 @@
 		$data[4] = "47";
 		$data[5] = "9876543210";
 		$data[6] = "Howrah";
-		$data[7] = "<a href='javascript: void(0)' data-center_id='1'><i class='fa fa-edit' aria-hidden='true' ></i>  </a><a href='javascript: void(0)' data-center_id='2'>  <i class='fa fa-trash' aria-hidden='true' data-center_id='1' ></i></a>";
+		$data[7] = "<a href='javascript: void(0)' data-center_id='1' class='edit_patient'><i class='fa fa-edit' aria-hidden='true' ></i>  </a><a href='javascript: void(0)' data-center_id='2'>  <i class='fa fa-trash' aria-hidden='true' data-center_id='1' ></i></a>";
 		array_push($mainData, $data);
 
 		$data[0] = 2;
@@ -86,7 +86,7 @@
 		$data[4] = "57";
 		$data[5] = "9876543201";
 		$data[6] = "Kolkata";
-		$data[7] = "<a href='javascript: void(0)' data-center_id='1'><i class='fa fa-edit' aria-hidden='true' ></i>  </a><a href='javascript: void(0)' data-center_id='2'>  <i class='fa fa-trash' aria-hidden='true' data-center_id='1' ></i></a>";
+		$data[7] = "<a href='javascript: void(0)' data-center_id='1' class='edit_patient'><i class='fa fa-edit' aria-hidden='true' ></i>  </a><a href='javascript: void(0)' data-center_id='2'>  <i class='fa fa-trash' aria-hidden='true' data-center_id='1' ></i></a>";
 		array_push($mainData, $data);
 
 		$return_array['data'] = $mainData;

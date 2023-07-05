@@ -50,7 +50,12 @@
 			include('settings/service_based_pricing/service_based_pricing.php');		
 		break;
 
-		//Patient Management		
+		//Patient Management	
+		case 'onlineappo':
+			$title = "BOOK AN APPOINTMENT";
+			include('onlineappo/onlineappo.php');
+			break;
+
 		case 'new_patient_registration':
 			$title = "New Patient Registration";
 			include('patient_management/new_patient_registration/new_patient_registration.php');		
@@ -64,6 +69,11 @@
 		case 'investigation':
 			$title = "Investigation";
 			include('patient_management/investigation/investigation.php');		
+		break;			
+
+		case 'upload_documents':
+			$title = "Upload Documents";
+			include('patient_management/upload_documents/upload_documents.php');		
 		break;	
 
 		case 'visit_summary':

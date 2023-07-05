@@ -150,30 +150,29 @@
                     <div class="col-sm-12">
                         <div class="card" >
                             <div class="card-header">
-                                <h5><?=$title?></h5>
+                                <h5>Visit Summary Report as on <?=date('d-m-Y', strtotime($searchdate))?></h5>
                                 <div class="card-header-right">
                                     <div class="btn-group card-option">
                                         <button type="button" class="btn dropdown-toggle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="feather icon-more-horizontal"></i>
                                         </button>
-                                        <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                                        <!-- <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
                                             <li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> maximize</span><span style="display:none"><i class="feather icon-minimize"></i> Restore</span></a></li>
                                             <li class="dropdown-item minimize-card"><a href="#!"><span><i class="feather icon-minus"></i> collapse</span><span style="display:none"><i class="feather icon-plus"></i> expand</span></a></li>
                                             <li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> reload</a></li>
                                             <li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i> remove</a></li>
-                                        </ul>
+                                        </ul> -->
                                     </div>
                                 </div>
                             </div>
 
                             <div class="card-body">
-                                <h4>Visit Summary Report as on <?=date('d-m-Y', strtotime($searchdate))?></h4>
+                                
                                 <div class="table-responsive">
                                     <table id="visitSummaryTable" class="table table-striped" style="width:100%">                                       
                                         <tbody>
-                                            <tr>
-                                                <th colspan="6">Patient ID<br>Patient Name</th>
-                                                <td colspan="7">10001<br>Banalata Sen</td>
+                                            <tr style="text-align: center;">
+                                                <th colspan="13"><h4>Patient: Banalata Sen [10001] </h4></th>
                                             </tr>
                                             <tr>
                                                 <th colspan="6">Gender<br>Age</th>
@@ -258,9 +257,8 @@
                                             </tr>
                                             <!-- Single Report end -->
                                             <!-- Single Report start -->
-                                            <tr>
-                                                <th colspan="6">Patient ID<br>Patient Name</th>
-                                                <td colspan="7">10001<br>Sukumar Roy</td>
+                                            <tr style="text-align: center;">
+                                            <th colspan="13"><h4>Patient: Sukumar Roy [10002] </h4></th>
                                             </tr>
                                             <tr>
                                                 <th colspan="6">Gender<br>Age</th>

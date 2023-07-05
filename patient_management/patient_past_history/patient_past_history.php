@@ -153,13 +153,13 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="col-md-3 mt-2">
+                                    <!-- <div class="col-md-3 mt-2">
                                         <button class="btn btn-primary mt-3" type="button" id="submitForm">
                                             <span class="spinner-border spinner-border-sm" role="status" style="display: none;" id="submitForm_spinner"></span>
                                             <span class="load-text" style="display: none;" id="submitForm_spinner_text">Loading...</span>
                                             <span class="btn-text" id="submitForm_text">Update</span>
                                         </button>
-                                    </div>                                    
+                                    </div> -->
                                 </div>
                             </form>
                         </div>
@@ -202,13 +202,13 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="col-md-3 mt-2">
+                                    <!-- <div class="col-md-3 mt-2">
                                         <button class="btn btn-primary mt-3" type="button" id="submitForm">
                                             <span class="spinner-border spinner-border-sm" role="status" style="display: none;" id="submitForm_spinner"></span>
                                             <span class="load-text" style="display: none;" id="submitForm_spinner_text">Loading...</span>
                                             <span class="btn-text" id="submitForm_text">Update</span>
                                         </button>
-                                    </div>                                    
+                                    </div> -->
                                 </div>
                             </form>
                         </div>
@@ -251,13 +251,13 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="col-md-3 mt-2">
+                                    <!-- <div class="col-md-3 mt-2">
                                         <button class="btn btn-primary mt-3" type="button" id="submitForm">
                                             <span class="spinner-border spinner-border-sm" role="status" style="display: none;" id="submitForm_spinner"></span>
                                             <span class="load-text" style="display: none;" id="submitForm_spinner_text">Loading...</span>
                                             <span class="btn-text" id="submitForm_text">Update</span>
                                         </button>
-                                    </div>                                    
+                                    </div> -->
                                 </div>
                             </form>
 

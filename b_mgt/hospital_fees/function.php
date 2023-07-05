@@ -77,31 +77,87 @@
 		array_push($mainData, $data);
 
 		$data[0] = 2;
-		$data[1] = "IPD Visit Fees";
-		$data[2] = "Joyeta Chakraborty [ID: 203203]";
-		$data[3] = "16-06-2023";
-		$data[4] = number_format(700, 2);
+		$data[1] = "";
+		$data[2] = "-";
+		$data[3] = "-";
+		$data[4] = "-";
 		array_push($mainData, $data);
 
 		$data[0] = 3;
+		$data[1] = "";
+		$data[2] = "-";
+		$data[3] = "30-06-2023";
+		$data[4] = number_format(500, 2);
+		array_push($mainData, $data);
+
+		$data[0] = 4;
+		$data[1] = "IPD Visit Fees";
+		$data[2] = "Joyeta Chakraborty [ID: 203203]";
+		$data[3] = "15-06-2023";
+		$data[4] = number_format(700, 2);
+		array_push($mainData, $data);
+
+		$data[0] = 5;
+		$data[1] = "";
+		$data[2] = "-";
+		$data[3] = "-";
+		$data[4] = "-";
+		array_push($mainData, $data);
+
+		$data[0] = 6;
+		$data[1] = "";
+		$data[2] = "-";
+		$data[3] = "30-06-2023";
+		$data[4] = number_format(600, 2);
+		array_push($mainData, $data);
+
+		$data[0] = 7;
 		$data[1] = "Surgery Fees";
 		$data[2] = "Pritam Halder [ID: 209209]";
 		$data[3] = "15-06-2023";
 		$data[4] = number_format(17500, 2);
 		array_push($mainData, $data);
 
-		$data[0] = 4;
+		$data[0] = 8;
+		$data[1] = "";
+		$data[2] = "-";
+		$data[3] = "-";
+		$data[4] = "-";
+		array_push($mainData, $data);
+
+		$data[0] = 9;
+		$data[1] = "";
+		$data[2] = "-";
+		$data[3] = "30-06-2023";
+		$data[4] = number_format(22000, 2);
+		array_push($mainData, $data);
+
+		$data[0] = 10;
 		$data[1] = "Emergency Care Fees";
 		$data[2] = "Amit Karmakar [ID: 100100]";
 		$data[3] = "17-06-2023";
 		$data[4] = number_format(1000, 2);
 		array_push($mainData, $data);
 
-		$data[0] = "5";
+		$data[0] = 11;
+		$data[1] = "Emergency Care Fees";
+		$data[2] = "-";
+		$data[3] = "-";
+		$data[4] = "-";
+		array_push($mainData, $data);
+
+		$data[0] = 12;
+		$data[1] = "";
+		$data[2] = "-";
+		$data[3] = "30-06-2023";
+		$data[4] = number_format(1200, 2);
+		array_push($mainData, $data);
+
+		$data[0] = "13";
 		$data[1] = "";
 		$data[2] = "";
 		$data[3] = "Total Fees Receivables:";
-		$data[4] = number_format(19700, 2);
+		$data[4] = number_format(632750, 2);
 		array_push($mainData, $data);
 
 		$return_array['data'] = $mainData;

@@ -108,6 +108,10 @@ $('#procedures').on('change', function(){
     }
 });
 
+$('#followUpSMS').on('click', function(){
+    $('#followUpSMSModal').modal('show');
+})
+
 $('#addNewSurgery').on('click', function(){
     $('#surgicalHistoryModal').modal('show');
 })
@@ -1093,3 +1097,7 @@ $('#submitFormGr').click(function(){
     }, 500)    
 })
 //Group Name Add End
+
+$('#submitForm').on('click', function(){
+    $('#visitSMSMOdal').modal('show');
+})

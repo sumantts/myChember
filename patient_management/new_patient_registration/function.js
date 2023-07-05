@@ -2,6 +2,14 @@ $('#newPatientAdd').on('click', function(){
     $('#newPatientModal').modal('show');
 })
 
+$('#example').on('click', '.edit_patient', function(){
+    $('#newPatientModal').modal('show');
+})
+
+$('#missedAppointment').on('click', function(){
+    $('#smsModal').modal('show');
+})
+
 function validateForm(){
     $Parameter = $('#Parameter').val().replace(/^\s+|\s+$/gm,'');
     $status = true;
