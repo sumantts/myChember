@@ -3,11 +3,11 @@
     if(isset($_POST["centerName"])){
         $centerName = $_POST["centerName"];
         $searchdate = $_POST["searchdate"];
-        $patientId = $_POST["patientId"];
+        $toDate = $_POST["toDate"];
     }else{
         $centerName = '0';
         $searchdate = date('d-m-Y');
-        $patientId = '';
+        $toDate = '';
     
     }//end if
 ?>
@@ -115,8 +115,8 @@
                                     </div>
                                     
                                     <div class="col-md-3 mb-3">
-                                        <label for="patientId">Patient Id</label>
-                                        <input type="text" class="form-control" id="patientId" name="patientId" value="<?=$patientId?>" >
+                                        <label for="toDate">Patient Id</label>
+                                        <input type="date" class="form-control" id="toDate" name="toDate" value="<?=$toDate?>" >
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>                                   
@@ -150,7 +150,7 @@
                     <div class="col-sm-12">
                         <div class="card" >
                             <div class="card-header">
-                                <h5>Visit Summary Report as on <?=date('d-m-Y', strtotime($searchdate))?></h5>
+                                <h5>Visit Summary Report from <?=date('d-m-Y', strtotime($searchdate))?> to <?=date('d-m-Y', strtotime($toDate))?></h5>
                                 <div class="card-header-right">
                                     <div class="btn-group card-option">
                                         <button type="button" class="btn dropdown-toggle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

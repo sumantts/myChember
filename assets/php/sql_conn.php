@@ -43,10 +43,10 @@
 		echo $r['SocietyNm'];
 	endwhile;*/
 
-	$title = 'myChember';
-	$logo_text = 'myChember';
+	$title = 'myChamber';
+	$logo_text = 'myChamber';
 
-    $p_name = 'myChember';
+    $p_name = 'myChamber';
 	$logo = 'NewLogo.jpg';
 	$ico = 'favicon.ico';
 	

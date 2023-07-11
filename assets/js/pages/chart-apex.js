@@ -244,7 +244,7 @@ $(document).ready(function() {
                     height: 320,
                     type: 'donut',
                 },
-                labels: ['Patient', 'Hospital', 'Miscellaneous'],
+                labels: ['Consultation Fee', 'IPD Fee', 'Surgery Fee'],
                 series: [44, 55, 41],
                 colors: ["#0e9e4a", "#f1c40f", "#e74c3c"],
                 legend: {

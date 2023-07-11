@@ -735,7 +735,7 @@
                             </form>
                         </div>
                     </div>         
-                    <button type="button" class="btn btn-primary ml-2 float-right" id="followUpSMS">Follo Up</button>  
+                    <button type="button" class="btn btn-primary ml-2 float-right" id="followUpSMS">Follow Up</button>  
                     <button type="button" class="btn btn-primary mb-2 float-right" id="saveInvestigation">Save</button>           
                 </div>
                 <!-- [ sample-page ] end -->

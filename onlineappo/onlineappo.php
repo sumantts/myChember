@@ -37,6 +37,16 @@
 						<h4 class="mb-3 f-w-400"><?php echo $title; ?></h4>
 						<hr>
 						<div class="form-group mb-3">
+							<input type="date" class="form-control" id="appodate" >
+						</div>
+						<div class="form-group mb-3">
+							<select class="form-control" id="centername" id="centername">								
+								<option>Choose Clinic/Hospital</option>
+								<option>RG Stone Urology & Laparoscopy Hospital</option>
+								<option>Balananda Brahmachari Hospital And Research Centre	</option>
+							</select>
+						</div>
+						<div class="form-group mb-3">
 							<input type="text" class="form-control" id="name" placeholder="Name">
 						</div>
 						<div class="form-group mb-3">

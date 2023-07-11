@@ -51,11 +51,13 @@ $('#submitForm').click(function(){
         $formVallidStatus = validateForm();
 
         if($formVallidStatus == true){
-            $service_id = $('#service_id').val();
+            $('#newPatientModal').modal('hide');
+            $('#smsModalNew').modal('show');
+            /*$service_id = $('#service_id').val();
             $.ajax({
                 method: "POST",
                 url: "patient_management/new_patient_registration/function.php",
-                data: { fn: "saveServices", service_id: $service_id, Parameter: $Parameter, serviceDescription: $serviceDescription }
+                data: { fn: "saveServices", service_id: $service_id, Parameter: $Parameter }
             })
             .done(function( res ) {
                 //console.log(res);
@@ -71,6 +73,7 @@ $('#submitForm').click(function(){
                     
                 }
             });//end ajax
+            */
         }
 
     }, 500)    

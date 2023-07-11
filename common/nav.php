@@ -54,11 +54,11 @@
 						</ul>
 					</li>
 
-					<li class="nav-item pcoded-hasmenu <?php if($p == 'patient_register' || $p == 'referring_register' || $p == 'ot_register' || $p == 'financial_statement_s' || $p == 'financial_statement_d' || $p == 'issue_e_prescription' || $p == 'issue_medical_certificate'){ ?> active pcoded-trigger <?php } ?>">
+					<li class="nav-item pcoded-hasmenu <?php if($p == 'patient_register' || $p == 'online_appointment' || $p == 'ot_register' || $p == 'financial_statement_s' || $p == 'financial_statement_d' || $p == 'issue_e_prescription' || $p == 'issue_medical_certificate'){ ?> active pcoded-trigger <?php } ?>">
 						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Reports</span></a>
 						<ul class="pcoded-submenu">
 							<li <?php if($p == 'patient_register'){ ?> class="active" <?php } ?>><a href="?p=patient_register&gr=reports">Patient Register</a></li>
-							<li <?php if($p == 'referring_register'){ ?> class="active" <?php } ?>><a href="?p=referring_register&gr=reports">Referring Register</a></li>
+							<li <?php if($p == 'online_appointment'){ ?> class="active" <?php } ?>><a href="?p=online_appointment&gr=reports">Online Appointment</a></li>
 							<li <?php if($p == 'ot_register'){ ?> class="active" <?php } ?>><a href="?p=ot_register&gr=reports">OT Register</a></li>
 							<li <?php if($p == 'financial_statement_s'){ ?> class="active" <?php } ?>><a href="?p=financial_statement_s&gr=reports">Financial Statement - Summary</a></li>
 							<li <?php if($p == 'financial_statement_d'){ ?> class="active" <?php } ?>><a href="?p=financial_statement_d&gr=reports">Financial Statement - Detailed</a></li>

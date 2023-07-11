@@ -89,6 +89,7 @@ include('common/head.php'); ?>
                                     <label for="lastName">Select Span</label>
                                     <select class="mb-3 form-control" id="time_span">
                                         <option>Today</option>
+                                        <option>Yesterday</option>
                                         <option>This Week</option>
                                         <option>This Month</option>
                                         <option>This Year</option>
@@ -135,6 +136,14 @@ include('common/head.php'); ?>
                                 </ul>
                             </div>
                         </div>
+                    </div>
+                    <div class="card-header">
+                        <ul>
+                            <li>Schedule Appointments&nbsp;&nbsp;: 13</li>
+                            <li>New Patient Registration : 08</li>
+                            <li>Patient Visit &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 11</li>
+                            <li>OT Scheduled&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 04</li>
+                        </ul>
                     </div>
 
                     <div class="card-body">

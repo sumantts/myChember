@@ -7,3 +7,14 @@
 7. Visit Summary - Input Date Format Check, Segregate line between two patient records  - Done
 8. Fees From Hospital - Tables data need to fillup as per excel  - Done
 9. SMS screen - All - Done
+
+
+************
+
+1. From date to date. REmove patient id field.
+Visit Summary Report from 08-07-2023 to 09-07-2023
+url: http://localhost/gitHub/myChember/?p=visit_summary&gr=p_mgt
+
+2. https://prnt.sc/For_E4mjx9Nb
+
+3. 
