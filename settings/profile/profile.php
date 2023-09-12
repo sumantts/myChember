@@ -183,8 +183,7 @@
                                     </div>
                                 </div>  
                                 <div class="col-md-4 mb-3">
-                                    <label for="lastName">Profile Photo</label>
-                                    
+                                    <label for="lastName">Profile Photo</label>                                    
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="inputGroupFile01">
                                         <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
